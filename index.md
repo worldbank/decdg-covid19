@@ -1,9 +1,14 @@
 
-## Overview ##
+## COVID-19 Data from the World Bank ##
+
+The World Bank COVID-19 data page provides an array of data resources relevant to the COVID-19 pandemic.
+This page will be updated frequently as more data and resources become available.
 
 ## Visualizations ##
 
 TODO: Vinny, Andres, Div, Andrew, Tony
+
+For now, we can embed [this map](jhu-map.html)
 
 ## Relevant Indicators ##
 
@@ -54,26 +59,39 @@ TODO: Vinny, Andres, Div, Andrew, Tony
 TODO: Add link to DDH
 
 ## Other Data Sources, Maps, & Dashboards ##
+## Resources ##
 
-* [Coronavirus Map: Tracking the Spread of the Outbreak][nyt1] (New York Times)
-* [Coronavirus Disease (COVID-19) – Statistics and Research][owid1] (ourworldindata.org)
-* [Coronavirus COVID-19 Global Cases][jhu1] (Johns Hopkins University) | [raw data][jhu-raw]
-* [CV19 Situation Dashboard][who1] (World Health Organization)
-* [World Bank COVID-19 Facdt Sheet][wb1] (World Bank)
-* [WHO Situation Reports][who2] (World Health Organization)
-* [WHO Myth Buster][who3] (World Health Organization)
-* [CDC - Coronavirus Disease 2019 (COVID-19), World Map][cdc1] (CDC-US)
+### Situation Reports, Data & Maps ###
+
+* [COVID-19 Global Cases][jhu1] | [Raw Data][jhu-raw] ([Johns Hopkins University][jhu2])
+* [CV19 Situation Dashboard][who1] | [Reports][who2] (World Health Organization)
 * [ECDC COVID-19 Information][ecdc1] (European Centre for Disease Prevention & Control)
 * [PAHO COVID-19 Information][paho1] (Pan American Health Organization)
-* [Why outbreaks like coronavirus spread exponentially, and how to "flatten the curve"][wapo1] (Washington Post)
+
+### Fact Sheets & Information ###
+
+* [World Bank COVID-19 Fact Sheet][wb1] (World Bank)
+* [WHO Myth Buster][who3] (World Health Organization)
+* [COVID-19 Statistics and Research][owid1] (ourworldindata.org)
 * [COVID-19 Educational Disruption and Response][unesco1] (UNESCO)
+
+### Media & Visualizations ###
+
+* [Coronavirus Map: Tracking the Spread of the Outbreak][nyt1] (New York Times)
+* [Why outbreaks like coronavirus spread exponentially, and how to "flatten the curve"][wapo1] (Washington Post)
+
+
+### Other (Don't include) ###
+
 * [Coronavirus Tracker][ft1] (Financial Times, requires subscription)
 * [COVID-19 Tracker][bing1] (Bing)
 * [2019-2020 Coronavirus Pandemic][wiki1] (Wikipedia)
+* [CDC - Coronavirus Disease 2019 (COVID-19), World Map][cdc1] (CDC-US)
 
 [nyt1]: https://www.nytimes.com/interactive/2020/world/coronavirus-maps.html?te=1&nl=morning-briefing&emc=edit_NN_p_20200316&section=topNews&campaign_id=9&instance_id=16781&segment_id=22269&user_id=c88d4dd2def89ee89ee8f48c7f0605f2&regi_id=77621490tion=topNews
 [owid1]: https://ourworldindata.org/coronavirus
-[jhu1]: https://coronavirus.jhu.edu/map.html
+[jhu1]: https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
+[jhu2]: https://coronavirus.jhu.edu/map.html
 [jhu-raw]: https://data.humdata.org/dataset/novel-coronavirus-2019-ncov-cases
 [who1]: https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd
 [wb1]: https://www.worldbank.org/en/news/factsheet/2020/02/11/how-the-world-bank-group-is-helping-countries-with-covid-19-coronavirus
