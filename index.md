@@ -56,7 +56,7 @@ For now, we can embed [this map](jhu-map.html)
 
 ## Other Datasets from the World Bank ##
 
-**[COVID-19 Related Datasets][]**.
+**[COVID-19 Related Datasets][ddh]**.
 This collection in the World Bank data catalog contains datasets that may be useful for analysis, response or modelling.
 
 ## Blogs & Reports (don't include) ##
