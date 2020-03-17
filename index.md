@@ -54,11 +54,15 @@ For now, we can embed [this map](jhu-map.html)
 * [Population ages 15-64, male (% of male population)](https://data.worldbank.org/indicator/SP.POP.1564.MA.ZS)
 * [Population ages 15-64 (% of total population)](https://data.worldbank.org/indicator/SP.POP.1564.TO.ZS)
 
-## Other Relevant Datasets from the World Bank ##
+## Other Datasets from the World Bank ##
 
-TODO: Add link to DDH
+**[COVID-19 Related Datasets][]**.
+This collection in the World Bank data catalog contains datasets that may be useful for analysis, response or modelling.
 
-## Other Data Sources, Maps, & Dashboards ##
+## Blogs & Reports (don't include) ##
+
+TODO: draft key messages/talking points
+
 ## Resources ##
 
 ### Situation Reports, Data & Maps ###
@@ -88,6 +92,8 @@ TODO: Add link to DDH
 * [2019-2020 Coronavirus Pandemic][wiki1] (Wikipedia)
 * [CDC - Coronavirus Disease 2019 (COVID-19), World Map][cdc1] (CDC-US)
 
+[ddh]: https://datacatalog.worldbank.org/search?search_api_views_fulltext_op=AND&f%5B0%5D=field_collection_field%3A2026
+
 [nyt1]: https://www.nytimes.com/interactive/2020/world/coronavirus-maps.html?te=1&nl=morning-briefing&emc=edit_NN_p_20200316&section=topNews&campaign_id=9&instance_id=16781&segment_id=22269&user_id=c88d4dd2def89ee89ee8f48c7f0605f2&regi_id=77621490tion=topNews
 [owid1]: https://ourworldindata.org/coronavirus
 [jhu1]: https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
@@ -106,10 +112,6 @@ TODO: Add link to DDH
 [bing1]: https://www.bing.com/covid
 [wiki1]: https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic
 
-
-## Blogs & Reports ##
-
-TODO: draft key messages/talking points
 
 
 ## Raw Indicator Codes (temporary) ##
