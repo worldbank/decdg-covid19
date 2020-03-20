@@ -12,47 +12,45 @@ For now, we can embed [this map](jhu-map.html)
 
 ## Relevant Indicators ##
 
-### Health ###
 
-* [Hospital beds (per 1,000 people)](https://data.worldbank.org/indicator/SH.MED.BEDS.ZS)
-* [Nurses and midwives (per 1,000 people)](https://data.worldbank.org/indicator/SH.MED.NUMW.P3)
-* [Physicians (per 1,000 people)](https://data.worldbank.org/indicator/SH.MED.PHYS.ZS)
-* [UHC service coverage index](https://data.worldbank.org/indicator/SH.UHC.SRVS.CV.XD)
-* [Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)](https://data.worldbank.org/indicator/SH.DYN.NCOM.ZS)
-* [Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70, female (%)](https://data.worldbank.org/indicator/SH.DYN.NCOM.FE.ZS)
-* [Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70, male (%)](https://data.worldbank.org/indicator/SH.DYN.NCOM.MA.ZS)
-* [Diabetes prevalence (% of population ages 20 to 79)](https://data.worldbank.org/indicator/SH.STA.DIAB.ZS)
-* [Smoking prevalence, total, ages 15+](https://data.worldbank.org/indicator/SH.PRV.SMOK)
-* [Smoking prevalence, females (% of adults)](https://data.worldbank.org/indicator/SH.PRV.SMOK.FE)
-* [Smoking prevalence, males (% of adults)](https://data.worldbank.org/indicator/SH.PRV.SMOK.MA)
-* [Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)](https://data.worldbank.org/indicator/SH.DTH.COMM.ZS)
-* [Cause of death, by injury (% of total)](https://data.worldbank.org/indicator/SH.DTH.INJR.ZS)
-* [Cause of death, by non-communicable diseases (% of total)](https://data.worldbank.org/indicator/SH.DTH.NCOM.ZS)
-* [Out-of-pocket expenditure (% of current health expenditure)](https://data.worldbank.org/indicator/SH.XPD.OOPC.CH.ZS)
-* [Out-of-pocket expenditure per capita (current US$)](https://data.worldbank.org/indicator/SH.XPD.OOPC.PC.CD)
-* [Out-of-pocket expenditure per capita, PPP (current international $)](https://data.worldbank.org/indicator/SH.XPD.OOPC.PP.CD)
-* [Proportion of population spending more than 10% of household consumption or income on out-of-pocket health care expenditure (%)](https://data.worldbank.org/indicator/SH.UHC.OOPC.10.ZS)
-* [Proportion of population spending more than 25% of household consumption or income on out-of-pocket health care expenditure (%)](https://data.worldbank.org/indicator/SH.UHC.OOPC.25.ZS)
-
-### Water & Sanitation ###
-
-* [People with basic handwashing facilities including soap and water (% of population)](https://data.worldbank.org/indicator/SH.STA.HYGN.ZS)
-* [People with basic handwashing facilities including soap and water, urban (% of urban population)](https://data.worldbank.org/indicator/SH.STA.HYGN.UR.ZS)
-* [People with basic handwashing facilities including soap and water, rural (% of rural population)](https://data.worldbank.org/indicator/SH.STA.HYGN.RU.ZS)
-
-### Age and Population ###
-
-* [Population ages 80 and above, female (% of female population)](https://data.worldbank.org/indicator/SP.POP.80UP.FE.5Y)
-* [Population ages 80 and above, male (% of male population)](https://data.worldbank.org/indicator/SP.POP.80UP.MA.5Y)
-* [Population ages 65 and above, female (% of total)](https://data.worldbank.org/indicator/SP.POP.65UP.FE.ZS)
-* [Population ages 65 and above, male (% of total)](https://data.worldbank.org/indicator/SP.POP.65UP.MA.ZS)
-* [Population ages 65 and above (% of total)](https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS)
-* [Population ages 0-14, female (% of female population)](https://data.worldbank.org/indicator/SP.POP.0014.FE.ZS)
-* [Population ages 0-14, male (% of male population)](https://data.worldbank.org/indicator/SP.POP.0014.MA.ZS)
-* [Population ages 0-14 (% of total population)](https://data.worldbank.org/indicator/SP.POP.0014.TO.ZS)
-* [Population ages 15-64, female (% of female population)](https://data.worldbank.org/indicator/SP.POP.1564.FE.ZS)
-* [Population ages 15-64, male (% of male population)](https://data.worldbank.org/indicator/SP.POP.1564.MA.ZS)
-* [Population ages 15-64 (% of total population)](https://data.worldbank.org/indicator/SP.POP.1564.TO.ZS)
+<table class="covid-indicator-table">
+<tr><th colspan=2>Health</th></td>
+<tr><td>SH.MED.BEDS.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.MED.BEDS.ZS">Hospital beds (per 1,000 people)</a><td></tr>
+<tr><td>SH.MED.NUMW.P3</td><td><a href="https://data.worldbank.org.indicator/SH.MED.NUMW.P3">Nurses and midwives (per 1,000 people)</a><td></tr>
+<tr><td>SH.MED.PHYS.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.MED.PHYS.ZS">Physicians (per 1,000 people)</a><td></tr>
+<tr><td>SH.UHC.SRVS.CV.XD</td><td><a href="https://data.worldbank.org.indicator/SH.UHC.SRVS.CV.XD">UHC service coverage index</a><td></tr>
+<tr><td>SH.DYN.NCOM.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.DYN.NCOM.ZS">Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)</a><td></tr>
+<tr><td>SH.DYN.NCOM.FE.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.DYN.NCOM.FE.ZS">Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70, female (%)</a><td></tr>
+<tr><td>SH.DYN.NCOM.MA.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.DYN.NCOM.MA.ZS">Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70, male (%)</a><td></tr>
+<tr><td>SH.STA.DIAB.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.STA.DIAB.ZS">Diabetes prevalence (% of population ages 20 to 79)</a><td></tr>
+<tr><td>SH.PRV.SMOK</td><td><a href="https://data.worldbank.org.indicator/SH.PRV.SMOK">Smoking prevalence, total, ages 15+</a><td></tr>
+<tr><td>SH.PRV.SMOK.FE</td><td><a href="https://data.worldbank.org.indicator/SH.PRV.SMOK.FE">Smoking prevalence, females (% of adults)</a><td></tr>
+<tr><td>SH.PRV.SMOK.MA</td><td><a href="https://data.worldbank.org.indicator/SH.PRV.SMOK.MA">Smoking prevalence, males (% of adults)</a><td></tr>
+<tr><td>SH.DTH.COMM.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.DTH.COMM.ZS">Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)</a><td></tr>
+<tr><td>SH.DTH.INJR.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.DTH.INJR.ZS">Cause of death, by injury (% of total)</a><td></tr>
+<tr><td>SH.DTH.NCOM.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.DTH.NCOM.ZS">Cause of death, by non-communicable diseases (% of total)</a><td></tr>
+<tr><td>SH.XPD.OOPC.CH.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.XPD.OOPC.CH.ZS">Out-of-pocket expenditure (% of current health expenditure)</a><td></tr>
+<tr><td>SH.XPD.OOPC.PC.CD</td><td><a href="https://data.worldbank.org.indicator/SH.XPD.OOPC.PC.CD">Out-of-pocket expenditure per capita (current US$)</a><td></tr>
+<tr><td>SH.XPD.OOPC.PP.CD</td><td><a href="https://data.worldbank.org.indicator/SH.XPD.OOPC.PP.CD">Out-of-pocket expenditure per capita, PPP (current international $)</a><td></tr>
+<tr><td>SH.UHC.OOPC.10.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.UHC.OOPC.10.ZS">Proportion of population spending more than 10% of household consumption or income on out-of-pocket health care expenditure (%)</a><td></tr>
+<tr><td>SH.UHC.OOPC.25.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.UHC.OOPC.25.ZS">Proportion of population spending more than 25% of household consumption or income on out-of-pocket health care expenditure (%)</a><td></tr>
+<tr><th colspan=2>Water &amp; Sanitation</th></td>
+<tr><td>SH.STA.HYGN.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.STA.HYGN.ZS">People with basic handwashing facilities including soap and water (% of population)</a><td></tr>
+<tr><td>SH.STA.HYGN.UR.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.STA.HYGN.UR.ZS">People with basic handwashing facilities including soap and water, urban (% of urban population)</a><td></tr>
+<tr><td>SH.STA.HYGN.RU.ZS</td><td><a href="https://data.worldbank.org.indicator/SH.STA.HYGN.RU.ZS">People with basic handwashing facilities including soap and water, rural (% of rural population)</a><td></tr>
+<tr><th colspan=2>Age &amp; Population</th></td>
+<tr><td>SP.POP.80UP.FE.5Y</td><td><a href="https://data.worldbank.org.indicator/SP.POP.80UP.FE.5Y">Population ages 80 and above, female (% of female population)</a><td></tr>
+<tr><td>SP.POP.80UP.MA.5Y</td><td><a href="https://data.worldbank.org.indicator/SP.POP.80UP.MA.5Y">Population ages 80 and above, male (% of male population)</a><td></tr>
+<tr><td>SP.POP.65UP.FE.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.65UP.FE.ZS">Population ages 65 and above, female (% of total)</a><td></tr>
+<tr><td>SP.POP.65UP.MA.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.65UP.MA.ZS">Population ages 65 and above, male (% of total)</a><td></tr>
+<tr><td>SP.POP.65UP.TO.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.65UP.TO.ZS">Population ages 65 and above (% of total)</a><td></tr>
+<tr><td>SP.POP.0014.FE.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.0014.FE.ZS">Population ages 0-14, female (% of female population)</a><td></tr>
+<tr><td>SP.POP.0014.MA.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.0014.MA.ZS">Population ages 0-14, male (% of male population)</a><td></tr>
+<tr><td>SP.POP.0014.TO.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.0014.TO.ZS">Population ages 0-14 (% of total population)</a><td></tr>
+<tr><td>SP.POP.1564.FE.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.1564.FE.ZS">Population ages 15-64, female (% of female population)</a><td></tr>
+<tr><td>SP.POP.1564.MA.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.1564.MA.ZS">Population ages 15-64, male (% of male population)</a><td></tr>
+<tr><td>SP.POP.1564.TO.ZS</td><td><a href="https://data.worldbank.org.indicator/SP.POP.1564.TO.ZS">Population ages 15-64 (% of total population)</a><td></tr>
+</table>
 
 ## Other Datasets from the World Bank ##
 
