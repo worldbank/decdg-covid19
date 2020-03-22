@@ -62,7 +62,7 @@ config['update_date'] = datetime.strftime(meta_mod, '%Y-%m-%dT%H:%M:%S')
 # assume that Confirmed, Deaths, and Recoveries are the 1st-3rd datasets
 confirmed_url, deaths_url, recovery_url = map(lambda x: x['url'], ckan['result']['resources'][0:3])
 
-manifest = {}
+manifest = {'world': {'name': 'World', 'locales': []}}
 c = pd.read_csv(confirmed_url).replace(0, np.nan).dropna(how='all', axis=1)
 d = pd.read_csv(deaths_url).replace(0, np.nan).dropna(how='all', axis=1)
 r = pd.read_csv(recovery_url).replace(0, np.nan).dropna(how='all', axis=1)
@@ -125,3 +125,24 @@ for key in c.dropna(subset=['Province/State']).index:
 
 with open(os.path.join(config['build_dir'], 'manifest.json'), 'w') as fd:
     json.dump(manifest, fd)
+
+# Write an HTML file too
+with open(os.path.join(config['build_dir'], 'index.html'), 'w') as fd:
+    print('<!DOCTYPE html>', file=fd)
+    print('<html>\n<head><title>{}</title>\n</head>'.format('API Documentation'), file=fd)
+    print('<body>', file=fd)
+    print('<p>This list in <a href="manifest.json">json format</a></p>', file=fd)
+
+    print('<ul>', file=fd)
+    for k,v in manifest.items():
+        print('<li><a href="{}.json">{}</a>'.format(k, v['name']), end='', file=fd)
+        if len(v['locales']) > 0:
+            print('\n  <ul>', file=fd)
+            for elem in v['locales']:
+                print('  <li><a href="{0}.json">{0}</a></li>'.format(elem), file=fd)
+
+            print('  </ul></li>', file=fd)
+        else:
+            print('', file=fd)
+    
+    print('</ul>\n</body>\n</html>', file=fd)
