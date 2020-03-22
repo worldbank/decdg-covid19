@@ -20,4 +20,4 @@ banner: ""
 </div>
 </div>
 
-{% include features.md %}
+{% include features.html %}
