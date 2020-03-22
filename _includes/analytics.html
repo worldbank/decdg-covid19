@@ -1,0 +1,30 @@
+		<script type="text/JavaScript">
+{% if page.url == "/" %}
+{% assign _pageName = "/index.html" %}
+{% else %}
+{% assign _pageName = page.url %}
+{% endif %}
+			var wbgData = wbgData || {};
+			wbgData.page = {
+				pageInfo: {
+						pageName: "DEC > {{ _pageName }}",
+						pageCategory: "{{ page.pageCategory }}",
+						contentType: "Data",
+						channel: "DEC Universal Health Coverage EXT"
+					}
+			},
+			wbgData.site = {
+				siteInfo: {
+						siteLanguage: "en",
+						siteType: "DEC",
+						siteEnv: "{{ site.siteEnvironment }}"
+				},
+				techInfo: {
+						cmsType: "jekyll",
+						bussVPUnit: "DEC",
+						bussUnit: "DECDG",
+						bussUserGroup: "external",
+						bussAgency: "ibrd"
+				}
+			}
+		</script>

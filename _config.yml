@@ -1,0 +1,25 @@
+
+siteEnvironment: qa
+exclude:
+  - python
+  - raw_material.md
+  - README.md
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      pageCategory: content page
+
+      # optional page banner
+
+      banner:
+        pretitle: Sovereign
+        title: Environmental, Social, and Governance Data
+        subtitle: Data, Tools, and Stuff
+        image:
+          filename: banner2.jpg
+          caption:  Banner image of a mountain and placid lake

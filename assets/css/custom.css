@@ -1,0 +1,269 @@
+@media (min-width:768px) {
+  .lp__banner_landing .cover_image {
+    height: 300px;
+  }
+
+  .lp__banner_title {
+    font-weight: 600;
+    font-size: 3.5rem;
+    font-family: Andes, sans-serif;
+  }
+
+  .lp__banner_description {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width:991px) {
+    .lp__banner_landing .cover_image {
+        height: 350px;
+    }
+
+    .lp__banner_title {
+      font-weight: 600;
+      font-size: 3.5rem;
+    }
+
+  .lp__banner_description {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+.additional_resources_card {
+  border-top: 0;
+}
+
+body ul.more_resources {
+  padding-left: 20px;
+}
+
+body ul.more_resources li,
+.additional_resources_list {
+  font-size: .875rem;
+  line-height: 1.25rem;
+  margin: 0 0 10px;
+}
+
+.card_tile {
+  position: relative;
+}
+
+.card_link {
+  position: absolute;
+  bottom: 10px;
+}
+
+.lp__body_content ol li, .lp__body_content ul li {
+    margin: 0px;
+}
+
+.card_tile {
+  height: auto;
+}
+
+@media (min-width: 576px) {
+  .card_tile {
+    height: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card_tile {
+    height: 375px;
+  }
+}
+
+@media (min-width: 1200px) {
+    .card_tile {
+      height: 400px;
+    }
+}
+
+/*
+@media (min-width: 991px) {
+  .card_tile {
+    height: 400px !important;
+  }
+  .card_tile_jp {
+    height: 510px !important;
+  }
+  .card_tile_es {
+    height: 600px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 790px) {
+  .card_tile {
+    height: 380px !important;
+  }
+  .card_tile_jp {
+    height: 510px !important;
+  }
+  .card_tile_es {
+    height: 610px !important;
+  }
+}
+
+/*
+
+.primary-btn {
+  padding-bottom: 15px;
+}
+
+.lp__card_img {
+  padding: 20px 0px 20px 0px;
+}
+
+.map_title {
+  margin-bottom: 0px;
+}
+
+.map_img {
+  padding-top: 0px;
+}
+
+/* BEGIN ESG styles added by Tim */
+.nobreak {
+  white-space: nowrap;
+}
+
+.lp__banner_title {
+  line-height: 1.0em;
+}
+
+.lp__banner_title .lp__banner_description {
+  font-weight: normal;
+}
+
+.lp__link_list, .lp__body_content ul, .lp__body_content ol {
+  list-style: disc; /* restore */
+  margin: 0 0 16px;
+}
+
+.indicators-list h6 {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.indicators-list ul {
+  list-style: none;
+}
+
+.indicators-list ul ul {
+  font-size: 0.75em;
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.lp__card_content p {
+  margin: 0 0 1em;
+}
+
+.lp__body_content h3 {
+  margin-top: 40px;
+}
+
+.lp__card_wrapper {
+  border-top: none;
+  margin-bottom: 0;
+}
+
+.staff-profile img {
+  width: 80px;
+  float: left;
+  margin: 0 1rem 0 0;
+}
+
+.staff-profile p {
+  font-size: 0.8rem;
+  line-height: 1.1em;
+  margin: 0 0 0.5em;
+}
+
+.staff-profile p.name {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.photo-caption {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.home-cards .row > div {
+  padding-bottom: 30px;
+}
+
+.row.staff-profile > div, .row.featured-report > div {
+  padding-bottom: 1rem;
+}
+
+.full-row-gray-components {
+  padding: 24px 0;
+}
+
+table.esg-framework .pillar {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#hp_teaser .lp__btn {
+  margin: 3px;
+}
+
+div.partner-logos > div {
+  margin: 12px 0 18px;
+}
+
+div.partner-logos img {
+  max-width: 200px;
+}
+
+div.breadcrumb-section {
+    position: static;
+    z-index: auto;
+}
+
+#jhu-map {
+  height: 400px;
+  width: 100%;
+}
+
+/* END ESG styles added by Tim */
+
+/*.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}*/
+
+  /* .h {
+      height: 270px;
+
+      position:relative;
+  }
+
+  .lp__card_list_horizontal {
+      position: absolute;
+      bottom: 0;
+      padding-bottom: 15px;
+  }
+
+@media (max-width:768px) {
+  .h {
+    height: 200px;
+
+    position:relative;
+  }
+
+  .lp__card_list_horizontal {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 15px;
+  }
+} */
