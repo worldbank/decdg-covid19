@@ -24,11 +24,11 @@ if config['--type'] == 'json':
     print()
 
 elif config['--type'] == 'html':
-    print('<table class="covid-indicator-table">')
+    print('<table class="table table-striped">')
     for topic in data:
-        print('<tr><th colspan=2>{}</th></td>'.format(html.escape(topic['topic'])))
+        print('<tr><th colspan=2>{}</th></tr>'.format(html.escape(topic['topic'])))
         for k,v in topic['indicators'].items():
-            print('<tr><td>{0}</td><td><a href="https://data.worldbank.org.indicator/{0}">{1}</a><td></tr>'.format(k, html.escape(v)))
+            print('<tr><td>{0}</td><td><a href="https://data.worldbank.org/indicator/{0}">{1}</a></td></tr>'.format(k, html.escape(v)))
 
     print('</table>')
 
