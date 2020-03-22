@@ -9,7 +9,10 @@ http://some.host/all.json  # global data, plus manifest of other countries
 http://some.host/CAN.json  # a specific country
 
 Usage:
-  cvapi.py TARGET_DIR
+  cvapi.py [--source=SRC] TARGET_DIR
+
+Options:
+  --source=SRC     Source data: either hdx or csse (JHU github) [default: csse]
 
 '''
 
@@ -18,6 +21,7 @@ import pandas as pd
 import numpy as np
 from wbgapi.economy import coder
 from datetime import datetime
+from github import Github
 import os
 import json
 from docopt import docopt
@@ -25,10 +29,33 @@ from docopt import docopt
 options = docopt(__doc__)
 
 config = {
-  'hdx_url': 'https://data.humdata.org/api/3/action/package_show?id=novel-coronavirus-2019-ncov-cases',
   'build_date': datetime.strftime(datetime.utcnow(), '%Y-%m-%dT%H:%M:%S'),
   'build_dir': options['TARGET_DIR'],
 }
+
+def hdx_refs():
+
+    url = 'https://data.humdata.org/api/3/action/package_show?id=novel-coronavirus-2019-ncov-cases'
+    ckan = requests.get(url).json()['result']
+    last_modified = datetime.strptime(ckan['metadata_modified'], '%Y-%m-%dT%H:%M:%S.%f')
+    c, d, r = map(lambda x: x['url'], ckan['resources'][0:3])
+    return c, d, r, last_modified
+
+def csse_refs():
+
+    git = Github()  # anonymous access
+    repo = git.get_repo('CSSEGISandData/COVID-19')
+    c_url, d_url, r_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-{}.csv'.format(x), ['Confirmed', 'Deaths', 'Recovered'])
+    c = repo.get_contents(c_url)
+    d = repo.get_contents(d_url)
+    r = repo.get_contents(r_url)
+    
+    # get the modification date from the latest commit for the confirmed case file
+    last_modified = repo.get_commits(path=c_url)[0].last_modified
+    last_modified = datetime.strptime(last_modified, '%a, %d %b %Y %H:%M:%S %Z')    # assumes this is GMT, b/c strptime actually ignores the timezone. Else use dateutils.parser
+
+    return c.download_url, d.download_url, r.download_url, last_modified
+
 
 def to_json(c, d, r, **kwargs):
     global config
@@ -52,17 +79,16 @@ def to_json(c, d, r, **kwargs):
 
     return data
 
-# get the latest data resource links
-response = requests.get(config['hdx_url'])
-ckan = response.json()
-meta_mod = datetime.strptime(ckan['result']['metadata_modified'], '%Y-%m-%dT%H:%M:%S.%f')
+if options['--source'] == 'hdx':
+    confirmed_url, deaths_url, recovery_url, last_modified = hdx_refs()
+elif options['--source'] == 'csse':
+    confirmed_url, deaths_url, recovery_url, last_modified = csse_refs()
+else:
+    raise ValueError('Unrecognized --source: {}'.format(options['--source']))
 
-config['update_date'] = datetime.strftime(meta_mod, '%Y-%m-%dT%H:%M:%S')
+config['update_date'] = datetime.strftime(last_modified, '%Y-%m-%dT%H:%M:%S')
 
-# assume that Confirmed, Deaths, and Recoveries are the 1st-3rd datasets
-confirmed_url, deaths_url, recovery_url = map(lambda x: x['url'], ckan['result']['resources'][0:3])
-
-manifest = {'world': {'name': 'World', 'locales': []}}
+manifest = {}
 c = pd.read_csv(confirmed_url).replace(0, np.nan).dropna(how='all', axis=1)
 d = pd.read_csv(deaths_url).replace(0, np.nan).dropna(how='all', axis=1)
 r = pd.read_csv(recovery_url).replace(0, np.nan).dropna(how='all', axis=1)
@@ -125,24 +151,3 @@ for key in c.dropna(subset=['Province/State']).index:
 
 with open(os.path.join(config['build_dir'], 'manifest.json'), 'w') as fd:
     json.dump(manifest, fd)
-
-# Write an HTML file too
-with open(os.path.join(config['build_dir'], 'index.html'), 'w') as fd:
-    print('<!DOCTYPE html>', file=fd)
-    print('<html>\n<head><title>{}</title>\n</head>'.format('API Documentation'), file=fd)
-    print('<body>', file=fd)
-    print('<p>This list in <a href="manifest.json">json format</a></p>', file=fd)
-
-    print('<ul>', file=fd)
-    for k,v in manifest.items():
-        print('<li><a href="{}.json">{}</a>'.format(k, v['name']), end='', file=fd)
-        if len(v['locales']) > 0:
-            print('\n  <ul>', file=fd)
-            for elem in v['locales']:
-                print('  <li><a href="{0}.json">{0}</a></li>'.format(elem), file=fd)
-
-            print('  </ul></li>', file=fd)
-        else:
-            print('', file=fd)
-    
-    print('</ul>\n</body>\n</html>', file=fd)
