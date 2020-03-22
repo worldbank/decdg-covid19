@@ -20,7 +20,7 @@ config = docopt(__doc__)
 
 data = yaml.safe_load(open(config['INPUT'], 'r'))
 if config['--type'] == 'json':
-    json.dump(data, sys.stdout, indent=4)
+    json.dump(data, sys.stdout, indent=2)
     print()
 
 elif config['--type'] == 'html':
