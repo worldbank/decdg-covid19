@@ -16,10 +16,6 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/clientlibs-wbrredsign.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
-        <!--
-		<link rel="stylesheet" type="text/css" href="assets/css/clientlibs-wbrredsign.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
-        -->
 {% include scripts-header.html %}
 {% include analytics-header.html %}
 	</head>
@@ -170,8 +166,10 @@
 	<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
 	<!-- <script src='js/megamenu-min.js' type="text/javascript"></script> -->
 
-{% include javascript.html %}
-	<script type="text/javascript"> _satellite.pageBottom(); </script>
+    <script src="//theloop.worldbank.org/content/dam/loop/assets/js/vendor/loop.js"></script>
+
+{% include analytics-footer.html %}
+
 </body>
 
 </html>

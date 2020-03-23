@@ -1,14 +1,5 @@
 {% if page.dataviz %}
         <script type='text/javascript' src='https://dataviz.worldbank.org/javascripts/api/viz_v1.js'></script>
 {% endif %}
-{% if site.analytics.legacy %}
-        {% if site.analytics.environ == 'prod' %}
-            {% assign _adobeAEMSuffix = "" %}
-        {% else %}
-            {% assign _adobeAEMSuffix = "-staging" %}
-        {% endif %}
-		<script src="//assets.adobedtm.com/572ee9d70241b5c796ae15c773eaaee4365408ec/satelliteLib-efd6120a6f6ed94da49cf49e2ba626ac110c7e3c{{ _adobeAEMSuffix }}.js"></script>
-{% endif %}
         <!-- frame buster -->
         <script type="text/javascript"> if(top.frames.length > 0) top.location.href=self.location; </script>
-
