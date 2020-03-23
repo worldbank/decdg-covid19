@@ -14,10 +14,13 @@ h2, .ombc-section .ombc-title {
 }
 */
 
-div.feature-box {
-  background: #eee;
+div.section-wrapper {
   padding-bottom: 16px;
   margin-bottom: 48px;
+}
+
+div.feature-box {
+  /* background: #eee; */
 }
 
 
@@ -34,6 +37,20 @@ div.lp__card_content li {
     font-size: 14px;
     line-height: 20px;
     margin: 0 0 16px;
+}
+
+#dg-dashboard a.img {
+  display: block;
+}
+
+#dg-dashboard img {
+  width: 100%;
+}
+
+table.table-indicators {
+  font-size: 0.8em;
+  width: 60%;
+  margin: 0 auto;
 }
 
 @media (min-width: 1201px) {

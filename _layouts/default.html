@@ -72,8 +72,6 @@
 {% capture intro_md %}{% include intro.md %}{% endcapture %}
 {{ intro_md | markdownify }}
 
-{% include indicators.html %}
-
 {{ content }}
 
             </div>
@@ -83,11 +81,9 @@
 
 <!-- BEGIN BOX-FEATURES -->
 {% assign boxes = 'box-left.md,box-middle.md,box-right.md' | split: ',' %}
-<div class="feature-box">
+<div class="section-wrapper feature-box">
     <div class="container">
-    <div class="container">
-        <h2><strong>Resources</strong></h2>
-    </div>
+        <h2>Resources</h2>
     <div class="par parsys">
         <div class="gridlayout parbase section">
             <div class="row ">
@@ -120,6 +116,20 @@
     </div> <!-- class.container -->
 </div> <!-- class.feature-box -->
 <!-- END BOX-FEATURES -->
+
+<div class="section-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+            <h2>Relevant Indicators</h2>
+
+            {% include indicators.html %}
+
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% if page.moreinfo %}

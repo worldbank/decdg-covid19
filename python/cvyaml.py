@@ -18,17 +18,20 @@ from docopt import docopt
 
 config = docopt(__doc__)
 
+ntable_columns = 2
+
 data = yaml.safe_load(open(config['INPUT'], 'r'))
 if config['--type'] == 'json':
     json.dump(data, sys.stdout, indent=2)
     print()
 
 elif config['--type'] == 'html':
-    print('<table class="table table-striped">')
+    print('<table class="table table-striped table-indicators">')
     for topic in data:
-        print('<tr><th colspan=2>{}</th></tr>'.format(html.escape(topic['topic'])))
+        print('<tr><th colspan={}>{}</th></tr>'.format(ntable_columns, html.escape(topic['topic'])))
         for k,v in topic['indicators'].items():
-            print('<tr><td>{0}</td><td><a href="https://data.worldbank.org/indicator/{0}">{1}</a></td></tr>'.format(k, html.escape(v)))
+            # print('<tr><td>{0}</td><td><a href="https://data.worldbank.org/indicator/{0}">{1}</a></td></tr>'.format(k, html.escape(v)))
+            print('<tr><td><a href="https://data.worldbank.org/indicator/{0}">{1}</a></td></tr>'.format(k, html.escape(v)))
 
     print('</table>')
 

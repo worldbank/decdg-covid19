@@ -1,5 +1,5 @@
 ---
-title: COVID-19 Data Page
+title: Understanding the COVID-19 pandemic through data
 
 analyticsPageCategory: content page
 
@@ -15,10 +15,13 @@ moreinfo_disabled:
       title: Title
 ---
 
-## Other Datasets from the World Bank ##
+## Datasets from the World Bank ##
 
 **[COVID-19 Related Datasets][ddh]**.
-This collection in the World Bank data catalog contains datasets that may be useful for analysis, response or modelling.
+This collection in the World Bank data catalog contains datasets that may be useful for analysis or modelling.
+It was developed by searching for health-related keywords such as "doctors," "hospitals," "respirators," etc.
+Some datasets may therefore not be relevant to the current pandemic. We hope to refine this list over time.
+
 
 [ddh]: https://datacatalog.worldbank.org/search?search_api_views_fulltext_op=AND&f%5B0%5D=field_collection_field%3A2026
 
