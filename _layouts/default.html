@@ -11,11 +11,11 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/loop.min.css">
+		<link rel="stylesheet" type="text/css" href="{{ site.assetDir }}/css/loop.min.css">
 
-		<link rel="stylesheet" type="text/css" href="assets/css/clientlibs-wbrredsign.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+		<link rel="stylesheet" type="text/css" href="{{ site.assetDir }}/css/clientlibs-wbrredsign.css">
+		<link rel="stylesheet" type="text/css" href="{{ site.assetDir }}/css/style.css">
+		<link rel="stylesheet" type="text/css" href="{{ site.assetDir }}/css/custom.css">
 {% include scripts-header.html %}
 {% include analytics-header.html %}
 	</head>
@@ -29,7 +29,7 @@
 	<div class="lp__banner_landing v1">
 		<div class="lp__banner_fullwidth">
 			<div class="lp__banner_img">
-				<img src="assets/img/{{ page.banner.image.filename }}" class="lp__img_responsive cover_image" alt="{{ page.banner.image.caption }}" title="Banner">
+				<img src="{{ site.assetDir }}/img/{{ page.banner.image.filename }}" class="lp__img_responsive cover_image" alt="{{ page.banner.image.caption }}" title="Banner">
 				<span class="img-gradient"></span>
 			</div>
 			<div class="container banner-container">

@@ -8,8 +8,10 @@ exclude:
   - python
   - raw_material.md
   - README.md
+  - jhu-map.html
 
 dataViz: false   # true includes javascript for tableau
+assetDir: "assets"  # path to img and css directory, relative to the page
 
 # Note that defaults aren't recognized for github pages so you'll have to defined them all as front matter
 defaults:
