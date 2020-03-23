@@ -1,5 +1,5 @@
 
-###### Fact Sheets and Information ######
+##### Fact Sheets and Information #####
 
 * [World Bank COVID-19 Fact Sheet][wb1] (World Bank)
 * [WHO Myth Buster][who3] (World Health Organization)

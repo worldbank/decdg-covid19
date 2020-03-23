@@ -1,23 +1,21 @@
 ---
 title: COVID-19 Data Page
 banner: ""
+moreinfo_disabled:
+  left:
+    - link:  framework.html
+      title: Title
+    - link:  http://documents.worldbank.org/curated/en/913961524150628959
+      title: Title
+  right:
+    - link:  https://www.worldbank.org/en/programs/global-program-on-sustainability
+      title: Title
 ---
 
-<div class="full-row-white-components">
-<div class="container">
-<div class="row lp__body_content">
-<div class="col-sm-12">
-<center><h2>{{ page.title }}</h2></center>
-        
-<div markdown=1>
-{% include intro.md %}
-{% include indicators.html %}
-{% include body.md %}
-</div>
+## Other Datasets from the World Bank ##
 
-</div>
-</div>
-</div>
-</div>
+**[COVID-19 Related Datasets][ddh]**.
+This collection in the World Bank data catalog contains datasets that may be useful for analysis, response or modelling.
 
-{% include features.html %}
+[ddh]: https://datacatalog.worldbank.org/search?search_api_views_fulltext_op=AND&f%5B0%5D=field_collection_field%3A2026
+

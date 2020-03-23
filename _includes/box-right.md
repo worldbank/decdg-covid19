@@ -1,5 +1,5 @@
 
-###### Media and Visualizations ######
+##### Media and Visualizations #####
 
 * [Coronavirus Map: Tracking the Spread of the Outbreak][nyt1] (New York Times)
 * [Why outbreaks like coronavirus spread exponentially, and how to "flatten the curve"][wapo1] (Washington Post)

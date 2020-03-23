@@ -16,8 +16,8 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/loop.min.css">
 
 		<link rel="stylesheet" type="text/css" href="assets/css/clientlibs-wbrredsign.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/style-min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/custom2.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
         <!--
 		<link rel="stylesheet" type="text/css" href="assets/css/clientlibs-wbrredsign.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
@@ -517,7 +517,63 @@
       </div></div>
   </div>
 
+<div class="full-row-white-components">
+    <div class="container">
+        <div class="row lp__body_content">
+            <div class="col-sm-12">
+            <center><h2>{{ page.title }}</h2></center>
+
+{% capture intro_md %}{% include intro.md %}{% endcapture %}
+{{ intro_md | markdownify }}
+
+{% include indicators.html %}
+
 {{ content }}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BEGIN BOX-FEATURES -->
+{% assign boxes = 'box-left.md,box-middle.md,box-right.md' | split: ',' %}
+<div class="feature-box">
+    <div class="container">
+    <div class="container">
+        <h2><strong>Resources</strong></h2>
+    </div>
+    <div class="par parsys">
+        <div class="gridlayout parbase section">
+            <div class="row ">
+{% for box in boxes %}
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 colsplit" id="">
+                    <div class=" ">
+                        <div class="grid_4_par_2 parsys">
+                            <div style="padding-left:0px;padding-right:0px;" class="remove-padding-grid">
+                                <div class="redesign_Projectcard section">
+                                    <div class="lp__card loop_card_title_text_links">
+                                        <div class="lp__card_wrapper">
+                                            <div class="lp__card_content">
+{% capture box_md %}{% include {{ box }} %}{% endcapture %}
+{{ box_md | markdownify }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% endfor %}
+            </div> <!-- class.row -->
+            <div class="clearfix"></div>
+            <div style="margin-bottom: 0px"></div>
+        </div> <!-- class.gridlayout parbase section -->
+    </div> <!-- class.par parsys -->
+    </div> <!-- class.container -->
+</div> <!-- class.feature-box -->
+<!-- END BOX-FEATURES -->
 
 
 {% if page.moreinfo %}

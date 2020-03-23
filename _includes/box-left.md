@@ -1,4 +1,4 @@
-###### Situation Reports, Data and Maps ######
+##### Situation Reports, Data and Maps #####
 
 * [COVID-19 Global Cases][jhu1] \| [Raw Data][jhu-raw] ([Johns Hopkins University][jhu2])
 * [CV19 Situation Dashboard][who1] \| [Reports][who2] (World Health Organization)
