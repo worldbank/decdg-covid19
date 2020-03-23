@@ -1,4 +1,6 @@
-		<script type="text/JavaScript">
+{% if site.analytics.legacy == false %}
+
+<script type="text/JavaScript">
 {% if page.url == "/" %}
 {% assign _pageName = "/index.html" %}
 {% else %}
@@ -8,16 +10,16 @@
 			wbgData.page = {
 				pageInfo: {
 						pageName: "DEC > {{ _pageName }}",
-						pageCategory: "{{ page.pageCategory }}",
+						pageCategory: "{{ page.analyticsPageCategory }}",
 						contentType: "Data",
-						channel: "DEC Universal Health Coverage EXT"
+						channel: "{{ site.analytics.channel  }}"
 					}
 			},
 			wbgData.site = {
 				siteInfo: {
 						siteLanguage: "en",
 						siteType: "DEC",
-						siteEnv: "{{ site.siteEnvironment }}"
+						siteEnv: "{{ site.analytics.environ }}"
 				},
 				techInfo: {
 						cmsType: "jekyll",
@@ -27,4 +29,6 @@
 						bussAgency: "ibrd"
 				}
 			}
-		</script>
+</script>
+
+{% endif %}

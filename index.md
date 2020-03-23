@@ -1,6 +1,9 @@
 ---
 title: COVID-19 Data Page
-banner: ""
+
+analyticsPageCategory: content page
+
+banner: ""      # see example in config.yml
 moreinfo_disabled:
   left:
     - link:  framework.html

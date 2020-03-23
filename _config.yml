@@ -1,10 +1,17 @@
 
-siteEnvironment: qa
+siteName: Universal Health Coverage Data
+analytics:
+    legacy: true
+    channel: DEC Universal Health Coverage EXT
+    environ: prod # (qa | prod)
 exclude:
   - python
   - raw_material.md
   - README.md
 
+dataViz: false   # true includes javascript for tableau
+
+# Note that defaults aren't recognized for github pages so you'll have to defined them all as front matter
 defaults:
   -
     scope:
