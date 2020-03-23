@@ -1,0 +1,64 @@
+
+h2, .ombc-section .ombc-title {
+    margin: 20px 0px 16px 0px !important;
+}
+	
+/* tgh: remove
+.lp__body_content {
+	font-size: 1.5rem !important;
+	line-height: 3rem !important;
+}
+
+.full-row-white-components {
+	padding: 2px 0px 64px 0px !important;
+}
+*/
+
+div.feature-box {
+  background: #eee;
+  padding-bottom: 16px;
+  margin-bottom: 48px;
+}
+
+
+div.lp__card_content h5 {
+    font-family: Andes,sans-serif;
+    color: #333;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+
+div.lp__card_content p,
+div.lp__card_content li {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 16px;
+}
+
+@media (min-width: 1201px) {
+    .lp__card_wrapper {
+        /*height: 1052px !important;*/
+        overflow: auto;
+    }
+}
+
+@media (min-width: 991px) {
+    .lp__card_content {
+        overflow: auto !important;
+    }
+}
+	
+	
+@media (max-width: 1200px) and (min-width: 992px) {
+    .lp__card_wrapper {
+        height: 380px !important;
+        overflow: auto !important;
+    }
+}
+
+/* tgh: temporary */
+#jhu-map {
+	height: 400px;
+	width: 100%;
+}

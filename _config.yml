@@ -1,0 +1,34 @@
+
+siteName: Universal Health Coverage Data
+analytics:
+    legacy: true
+    channel: DEC Universal Health Coverage EXT
+    environ: prod # (qa | prod)
+exclude:
+  - python
+  - raw_material.md
+  - README.md
+  - jhu-map.html
+
+dataViz: false   # true includes javascript for tableau
+assetDir: "assets"  # path to img and css directory, relative to the page
+
+# Note that defaults aren't recognized for github pages so you'll have to defined them all as front matter
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      pageCategory: content page
+
+      # optional page banner
+
+      banner:
+        pretitle: Sovereign
+        title: Environmental, Social, and Governance Data
+        subtitle: Data, Tools, and Stuff
+        image:
+          filename: banner2.jpg
+          caption:  Banner image of a mountain and placid lake

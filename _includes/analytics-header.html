@@ -1,0 +1,40 @@
+{% if site.analytics.legacy == false %}
+    {% if site.analytics.environ == 'prod' %}
+        {% assign _adobeAEMSuffix = "" %}
+    {% else %}
+        {% assign _adobeAEMSuffix = "-staging" %}
+    {% endif %}
+
+<script src="//assets.adobedtm.com/572ee9d70241b5c796ae15c773eaaee4365408ec/satelliteLib-efd6120a6f6ed94da49cf49e2ba626ac110c7e3c{{ _adobeAEMSuffix }}.js"></script>
+<script type="text/JavaScript">
+{% if page.url == "/" %}
+{% assign _pageName = "/index.html" %}
+{% else %}
+{% assign _pageName = page.url %}
+{% endif %}
+			var wbgData = wbgData || {};
+			wbgData.page = {
+				pageInfo: {
+						pageName: "DEC > {{ _pageName }}",
+						pageCategory: "{{ page.analyticsPageCategory }}",
+						contentType: "Data",
+						channel: "{{ site.analytics.channel  }}"
+					}
+			},
+			wbgData.site = {
+				siteInfo: {
+						siteLanguage: "en",
+						siteType: "DEC",
+						siteEnv: "{{ site.analytics.environ }}"
+				},
+				techInfo: {
+						cmsType: "jekyll",
+						bussVPUnit: "DEC",
+						bussUnit: "DECDG",
+						bussUserGroup: "external",
+						bussAgency: "ibrd"
+				}
+			}
+</script>
+
+{% endif %}
