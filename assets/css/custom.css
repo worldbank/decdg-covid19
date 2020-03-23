@@ -16,7 +16,11 @@ h2, .ombc-section .ombc-title {
 
 div.section-wrapper {
   padding-bottom: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
+}
+
+div.section-wrapper.first {
+  margin-top: 64px;
 }
 
 div.feature-box {

@@ -1,4 +1,21 @@
 
+## Overview ##
+
+The Development Data group in the World Bank is using this project to collect and organize
+a bunch of data relevant to the coronavirus pandemic, and a set of pages and tools to make
+them broadly available. This is a highly fluid project, and goals, information and requirements
+are changing every day.
+
+
+## Suggestions ##
+
+If you have suggestions for this page, especially useful datasets, please either:
+
+1. Fork this project, add them to `raw_material.md` and submit a pull request:
+2. Add them to [this google doc][gdoc] (Bank staff may request access permission)
+
+[gdoc]: https://docs.google.com/document/d/1TOmQih8hInbX9PboiNInQiHM1f2-GxzLj1n-DffofV8/edit#heading=h.7b47sfc7ctsl
+
 ## COVID-19 static data page ##
 
 This repository includes a static page of COVID-19 data resources composed using Github pages
