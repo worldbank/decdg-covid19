@@ -45,16 +45,18 @@ def csse_refs():
 
     git = Github()  # anonymous access
     repo = git.get_repo('CSSEGISandData/COVID-19')
-    c_url, d_url, r_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-{}.csv'.format(x), ['Confirmed', 'Deaths', 'Recovered'])
+    # c_url, d_url, r_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-{}.csv'.format(x), ['Confirmed', 'Deaths', 'Recovered'])
+    c_url, d_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_{}_global.csv'.format(x), ['confirmed', 'deaths'])
     c = repo.get_contents(c_url)
     d = repo.get_contents(d_url)
-    r = repo.get_contents(r_url)
+    # r = repo.get_contents(r_url)
     
     # get the modification date from the latest commit for the confirmed case file
     last_modified = repo.get_commits(path=c_url)[0].last_modified
     last_modified = datetime.strptime(last_modified, '%a, %d %b %Y %H:%M:%S %Z')    # assumes this is GMT, b/c strptime actually ignores the timezone. Else use dateutils.parser
 
-    return c.download_url, d.download_url, r.download_url, last_modified
+    # return c.download_url, d.download_url, r.download_url, last_modified
+    return c.download_url, d.download_url, None, last_modified
 
 
 def to_json(c, d, r, **kwargs):
@@ -72,10 +74,13 @@ def to_json(c, d, r, **kwargs):
 
     for i in c.index:
         ts = datetime.strptime(i, '%m/%d/%y')   # e.g., 3/12/20
-
-        confirmed, deaths, recovered = int(np.nan_to_num(c[i])), int(np.nan_to_num(d[i])), int(np.nan_to_num(r[i]))
         key = datetime.strftime(ts, '%Y/%m/%d')
-        data['data'].append({'date': key, 'confirmed': confirmed, 'deaths': deaths, 'recovered': recovered})
+
+        row = {'date': key, 'confirmed': int(np.nan_to_num(c[i])), 'deaths': int(np.nan_to_num(d[i]))}
+        if r:
+            row['recovered'] = int(np.nan_to_num(r[i]))
+
+        data['data'].append(row)
 
     return data
 
@@ -91,7 +96,6 @@ config['update_date'] = datetime.strftime(last_modified, '%Y-%m-%dT%H:%M:%S')
 manifest = {'world': {'name': 'World', 'locales': []}}
 c = pd.read_csv(confirmed_url).replace(0, np.nan).dropna(how='all', axis=1)
 d = pd.read_csv(deaths_url).replace(0, np.nan).dropna(how='all', axis=1)
-r = pd.read_csv(recovery_url).replace(0, np.nan).dropna(how='all', axis=1)
 
 date_columns = list(filter(lambda x: x not in ['Lat', 'Long', 'Province/State', 'Country/Region'], c.columns))
 
@@ -101,21 +105,30 @@ c['stp_key'] = c['Province/State'].fillna('').str.replace(r'\W','').str.upper()
 # c, d & r aren't always in the same order, so we need to create a common index
 c['geokey'] = c['Province/State'].fillna('_') + ':' + c['Country/Region'].fillna('_')
 d['geokey'] = d['Province/State'].fillna('_') + ':' + d['Country/Region'].fillna('_')
-r['geokey'] = r['Province/State'].fillna('_') + ':' + r['Country/Region'].fillna('_')
 
 c.set_index('geokey', inplace=True)
 d.set_index('geokey', inplace=True)
-r.set_index('geokey', inplace=True)
 
-data = to_json(c.sum()[date_columns], d.sum()[date_columns], r.sum()[date_columns], iso='WLD', name='World')
+# aggregate by country
+prov_count = c.groupby('Country/Region')[['Province/State']].count()
+lat_long   = c.groupby('Country/Region')[['Lat', 'Long']].min()
+
+c2 = c.groupby('Country/Region').sum()[date_columns]
+d2 = d.groupby('Country/Region').sum()[date_columns]
+
+if recovery_url:
+    r = pd.read_csv(recovery_url).replace(0, np.nan).dropna(how='all', axis=1)
+    r['geokey'] = r['Province/State'].fillna('_') + ':' + r['Country/Region'].fillna('_')
+    r.set_index('geokey', inplace=True)
+    r2 = r.groupby('Country/Region').sum()[date_columns]
+else:
+    r = None
+    r2 = None
+
+data = to_json(c.sum()[date_columns], d.sum()[date_columns], r.sum()[date_columns] if r else None, iso='WLD', name='World')
 with open(os.path.join(config['build_dir'], 'world.json'), 'w') as fd:
     json.dump(data, fd)
 
-# aggregate by country
-aggs = c.groupby('Country/Region').agg([np.min, np.max, 'count'])
-c2 = c.groupby('Country/Region').sum()[date_columns]
-d2 = d.groupby('Country/Region').sum()[date_columns]
-r2 = r.groupby('Country/Region').sum()[date_columns]
 
 for key in c2.index:
     iso = coder(key)
@@ -123,11 +136,11 @@ for key in c2.index:
         manifest[iso] = {'name': key, 'locales': []}
         with open(os.path.join(config['build_dir'], iso + '.json'), 'w') as fd:
             meta = dict(iso=iso, name=key)
-            if aggs.loc[key]['Province/State']['count'] == 0:
-                meta['lon'] = aggs.loc[key]['Long']['amin']
-                meta['lat'] = aggs.loc[key]['Lat']['amin']
+            if prov_count.loc[key]['Province/State'] == 0:
+                meta['lon'] = lat_long.loc[key]['Long']
+                meta['lat'] = lat_long.loc[key]['Lat']
 
-            data = to_json(c2.loc[key], d2.loc[key], r2.loc[key], **meta)
+            data = to_json(c2.loc[key], d2.loc[key], r2.loc[key] if r2 else None, **meta)
             json.dump(data, fd)
 
 # now write subnational data
@@ -146,7 +159,7 @@ for key in c.dropna(subset=['Province/State']).index:
             pass
 
         with open(os.path.join(config['build_dir'], iso, row['stp_key'] + '.json'), 'w') as fd:
-            data = to_json(c.loc[key][date_columns], d.loc[key][date_columns], r.loc[key][date_columns], iso=iso, name=row['Province/State'], lat=row['Lat'], lon=row['Long'])
+            data = to_json(c.loc[key][date_columns], d.loc[key][date_columns], r.loc[key][date_columns] if r else None, iso=iso, name=row['Province/State'], lat=row['Lat'], lon=row['Long'])
             json.dump(data, fd)
 
 with open(os.path.join(config['build_dir'], 'manifest.json'), 'w') as fd:
