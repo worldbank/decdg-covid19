@@ -34,7 +34,7 @@
 			</div>
 			<div class="container banner-container">
 				<div class="row">
-					<div class="lp__banner_img_overlay_v1 col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12">
+					<div class="lp__banner_img_overlay_v1 col-lg-10 col-md-12 col-sm-12 col-xs-12">
 						<h1 class="lp__banner_title">
                         {% if page.banner.pretitle %}
                         <span class="lp__banner_description">{{ page.banner.pretitle }}<br/></span>
@@ -90,7 +90,7 @@
 </div>
 
 <!-- BEGIN BOX-FEATURES -->
-{% assign boxes = 'box-feature-data.md,box-feature-info.md,box-feature-viz.md' | split: ',' %}
+{% assign boxes = 'box-feature-data.md,box-feature-info.md' | split: ',' %}
 <div class="section-wrapper feature-box">
     <div class="container">
         <h2>Resources</h2>
@@ -98,7 +98,7 @@
         <div class="gridlayout parbase section">
             <div class="row ">
 {% for box in boxes %}
-                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12 colsplit" id="">
+                <div class="col col-md-6 colsplit" id="">
                     <div class=" ">
                         <div class="grid_4_par_2 parsys">
                             <div style="padding-left:0px;padding-right:0px;" class="remove-padding-grid">

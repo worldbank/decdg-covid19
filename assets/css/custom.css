@@ -1,4 +1,6 @@
 
+/* loop breakpoints: xl: 1201, l: 992, m: 768: s: 576, xs: <576
+*/
 h2, .ombc-section .ombc-title {
     margin: 20px 0px 16px 0px !important;
 }
@@ -51,30 +53,36 @@ div.lp__card_content li {
   width: 100%;
 }
 
+#dg-dashboard iframe {
+  width: 100%;
+  min-width: 1075px;
+  height: 720px;
+  border: 0;
+}
+
 table.table-indicators {
   font-size: 0.8em;
   width: 60%;
   margin: 0 auto;
 }
 
-@media (min-width: 1201px) {
-    .lp__card_wrapper {
-        /*height: 1052px !important;*/
-        overflow: auto;
-    }
-}
+/* min-heights so that all feature boxes are uniform height when
+   shown side-by-side, assumes a 3-column layout. May need to be
+   tweaked for the actual content of the largest box
+   m and below collapses to single column
 
+   Friendly reminder: @media declarations must be in increasing
+   order of min-width for the cascade to work properly
+*/
 @media (min-width: 991px) {
-    .lp__card_content {
-        overflow: auto !important;
+    div.feature-box .lp__card_wrapper {
+        min-height: 290px;
     }
 }
 	
-	
-@media (max-width: 1200px) and (min-width: 992px) {
-    .lp__card_wrapper {
-        height: 380px !important;
-        overflow: auto !important;
+@media (min-width: 1201px) {
+    div.feature-box .lp__card_wrapper {
+        min-height: 270px;
     }
 }
 
