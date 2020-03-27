@@ -23,6 +23,10 @@ It is designed so that commits on the master branch will build the page, and the
 be downloaded or copy/pasted to another site, provided the supporting files (CSS, javascript,
 graphics) are all in place. All supporting local files are in the `assets/` subdirectory.
 
+Note that all page content is organized in the `_includes` directory. The ordinary `.md` files
+contain no content except for front matter since this is a one-page site (which generates dev, 
+internal and public pages simultaneously).
+
 The page is broken into several component parts, roughly in this order from top to bottom:
 
 * \_includes/intro.md: introductory paragraph along with the iframe or embeds for the
@@ -31,9 +35,9 @@ The page is broken into several component parts, roughly in this order from top 
 
   `python python/cvyaml.py covid-indicators.yaml > _includes/indicators.html`
 
-* index.md: more content
+* body.md: more content
 
-* \_includes/box-[left|center|right].md: content for the boxes towards the bottom
+* \_includes/box-feature-[data|info|viz].md: content for the boxes towards the bottom
 
 In addition, a "more information" box can be displayed at the bottom of the page by defining
 a "moreinfo" object in the front matter of index.md and defining two arrays for left-side

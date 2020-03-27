@@ -1,9 +1,7 @@
 
-{% assign dash_url = "http://w0lxpjekins05.worldbank.org:3939/covid-dashboard" %}
-
 Data is critical to support countries in managing the global COVID-19 pandemic.
 This site provides an array of real-time data, statistical indicators, and other
-data types that are relevant to the coronavirus pandemic. These data are 
+types of data that are relevant to the coronavirus pandemic. These data are 
 drawn from the World Bank's data catalog and other authoritative sources.
 
 This page will be updated frequently as more data
@@ -11,8 +9,8 @@ and research becomes available, particularly on the economic and social impacts 
 pandemic and the [World Bank's efforts to address them][wb-covid].
 
 <div id="dg-dashboard">
-<iframe src="{{ dash_url }}"></iframe>
-<p><a target="_new" href="{{ dash_url }}">Click here</a> to access the dashboard in a separate window.</p>
+<iframe src="{{ page.dash_url }}"></iframe>
+<p><a target="_new" href="{{ page.dash_url }}">Click here</a> to access the dashboard in a separate window.</p>
 </div>
 
 *Sources: [Johns Hopkins University Center for Systems Science and Engineering][jhu1] via [Github][jhu2]; [World Development Indicators][wb1]*

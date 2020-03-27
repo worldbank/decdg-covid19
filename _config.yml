@@ -1,7 +1,7 @@
 
 siteName: Universal Health Coverage Data
 analytics:
-    legacy: true
+    legacy: true # true will implement the legacy analytics code instead of the latest
     channel: DEC Universal Health Coverage EXT
     environ: prod # (qa | prod)
 exclude:

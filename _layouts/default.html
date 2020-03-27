@@ -82,7 +82,8 @@
         <div class="row lp__body_content">
             <div class="col-sm-12">
 
-{{ content }}
+{% capture content_md %}{% include body.md %}{% endcapture %}
+{{ content_md | markdownify }}
 
             </div>
         </div>
