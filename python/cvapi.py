@@ -43,20 +43,23 @@ def hdx_refs():
 
 def csse_refs():
 
-    git = Github()  # anonymous access
+    try:
+        git_token = os.environ['GITHUB_ANONYMOUS_TOKEN']
+    except KeyError:
+        raise OSError('GITHUB_ANONYMOUS_TOKEN must be defined as a valid access token in your environment')
+
+    git = Github(git_token)
     repo = git.get_repo('CSSEGISandData/COVID-19')
-    # c_url, d_url, r_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-{}.csv'.format(x), ['Confirmed', 'Deaths', 'Recovered'])
-    c_url, d_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_{}_global.csv'.format(x), ['confirmed', 'deaths'])
+    c_url, d_url, r_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_{}_global.csv'.format(x), ['confirmed', 'deaths', 'recovered'])
     c = repo.get_contents(c_url)
     d = repo.get_contents(d_url)
-    # r = repo.get_contents(r_url)
+    r = repo.get_contents(r_url)
     
     # get the modification date from the latest commit for the confirmed case file
     last_modified = repo.get_commits(path=c_url)[0].last_modified
     last_modified = datetime.strptime(last_modified, '%a, %d %b %Y %H:%M:%S %Z')    # assumes this is GMT, b/c strptime actually ignores the timezone. Else use dateutils.parser
 
-    # return c.download_url, d.download_url, r.download_url, last_modified
-    return c.download_url, d.download_url, None, last_modified
+    return c.download_url, d.download_url, r.download_url, last_modified
 
 
 def to_json(c, d, r, **kwargs):
@@ -77,7 +80,9 @@ def to_json(c, d, r, **kwargs):
         key = datetime.strftime(ts, '%Y/%m/%d')
 
         row = {'date': key, 'confirmed': int(np.nan_to_num(c[i])), 'deaths': int(np.nan_to_num(d[i]))}
-        if r:
+        if r is None:
+            row['recovered'] = None
+        else:
             row['recovered'] = int(np.nan_to_num(r[i]))
 
         data['data'].append(row)
@@ -125,7 +130,7 @@ else:
     r = None
     r2 = None
 
-data = to_json(c.sum()[date_columns], d.sum()[date_columns], r.sum()[date_columns] if r else None, iso='WLD', name='World')
+data = to_json(c.sum()[date_columns], d.sum()[date_columns], None if r is None else r.sum()[date_columns], iso='WLD', name='World')
 with open(os.path.join(config['build_dir'], 'world.json'), 'w') as fd:
     json.dump(data, fd)
 
@@ -140,7 +145,7 @@ for key in c2.index:
                 meta['lon'] = lat_long.loc[key]['Long']
                 meta['lat'] = lat_long.loc[key]['Lat']
 
-            data = to_json(c2.loc[key], d2.loc[key], r2.loc[key] if r2 else None, **meta)
+            data = to_json(c2.loc[key], d2.loc[key], None if r2 is None else r2.loc[key], **meta)
             json.dump(data, fd)
 
 # now write subnational data
@@ -159,7 +164,7 @@ for key in c.dropna(subset=['Province/State']).index:
             pass
 
         with open(os.path.join(config['build_dir'], iso, row['stp_key'] + '.json'), 'w') as fd:
-            data = to_json(c.loc[key][date_columns], d.loc[key][date_columns], r.loc[key][date_columns] if r else None, iso=iso, name=row['Province/State'], lat=row['Lat'], lon=row['Long'])
+            data = to_json(c.loc[key][date_columns], d.loc[key][date_columns], None if (r is None or key not in r.index) else r.loc[key][date_columns], iso=iso, name=row['Province/State'], lat=row['Lat'], lon=row['Long'])
             json.dump(data, fd)
 
 with open(os.path.join(config['build_dir'], 'manifest.json'), 'w') as fd:
