@@ -30,9 +30,21 @@
     SH.DTH.NCOM.ZS: Cause of death, by non-communicable diseases (% of total)
 - topic: Water & Sanitation
   indicators:
-    SH.STA.HYGN.ZS: People with basic handwashing facilities including soap and water (% of population)
+    SH.STA.HYGN.ZS:    People with basic handwashing facilities including soap and water (% of population)
     SH.STA.HYGN.UR.ZS: People with basic handwashing facilities including soap and water, urban (% of urban population)
     SH.STA.HYGN.RU.ZS: People with basic handwashing facilities including soap and water, rural (% of rural population)
+    SH.H2O.BASW.ZS:    People using at least basic drinking water services (% of population)
+    SH.H2O.BASW.UR.ZS: People using at least basic drinking water services, urban (% of urban population)
+    SH.H2O.BASW.RU.ZS: People using at least basic drinking water services, rural (% of rural population)
+    SH.H2O.SMDW.ZS:    People using safely managed drinking water services (% of population)
+    SH.H2O.SMDW.UR.ZS: People using safely managed drinking water services, urban (% of urban population)
+    SH.H2O.SMDW.RU.ZS: People using safely managed drinking water services, rural (% of rural population)
+    SH.STA.BASS.ZS:    People using at least basic sanitation services (% of population)
+    SH.STA.BASS.UR.ZS: People using at least basic sanitation services, urban (% of urban population)
+    SH.STA.BASS.RU.ZS: People using at least basic sanitation services, rural (% of rural population)
+    SH.STA.SMSS.ZS:    People using safely managed sanitation services (% of population)
+    SH.STA.SMSS.UR.ZS: People using safely managed sanitation services, urban (% of urban population)
+    SH.STA.SMSS.RU.ZS: People using safely managed sanitation services, rural (% of rural population)
 - topic: Age & Population
   indicators:
     SP.POP.80UP.FE.5Y: Population ages 80 and above, female (% of female population)
