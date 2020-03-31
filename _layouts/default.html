@@ -63,9 +63,9 @@
       </div></div>
   </div>
 
-<div class="section-wrapper first">
+<div class="section-wrapper lp__body_content first">
     <div class="container">
-        <div class="row lp__body_content">
+        <div class="row">
             <div class="col-sm-12">
             <center><h2>{{ page.title }}</h2></center>
 
@@ -77,9 +77,9 @@
     </div>
 </div>
 
-<div class="section-wrapper">
+<div class="section-wrapper lp__body_content">
     <div class="container">
-        <div class="row lp__body_content">
+        <div class="row">
             <div class="col-sm-12">
 
 {% capture content_md %}{% include body.md %}{% endcapture %}
@@ -92,12 +92,12 @@
 
 <!-- BEGIN BOX-FEATURES -->
 {% assign boxes = 'box-feature-data.md,box-feature-info.md' | split: ',' %}
-<div class="section-wrapper feature-box">
+<div class="section-wrapper feature-box lp__body_content">
     <div class="container">
         <h2>Resources</h2>
     <div class="par parsys">
         <div class="gridlayout parbase section">
-            <div class="row ">
+            <div class="row">
 {% for box in boxes %}
                 <div class="col col-md-6 colsplit" id="">
                     <div class=" ">
@@ -128,12 +128,14 @@
 </div> <!-- class.feature-box -->
 <!-- END BOX-FEATURES -->
 
-<div class="section-wrapper">
+<div class="section-wrapper lp__body_content">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
 
             <h2>Relevant Indicators</h2>
+
+            <p>This table is also available in <a href="covid-indicators.json">JSON format</a>.</p>
 
             {% include indicators.html %}
 

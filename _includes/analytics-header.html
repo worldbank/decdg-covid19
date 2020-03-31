@@ -15,7 +15,7 @@
 			var wbgData = wbgData || {};
 			wbgData.page = {
 				pageInfo: {
-						pageName: "DEC > {{ _pageName }}",
+						pageName: "DEC > {{ site.analytics.basePath }}{{ _pageName }}",
 						pageCategory: "{{ page.analyticsPageCategory }}",
 						contentType: "Data",
 						channel: "{{ site.analytics.channel  }}"
