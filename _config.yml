@@ -13,6 +13,7 @@ exclude:
 
 dataViz: false   # true includes javascript for tableau
 assetDir: "assets"  # path to img and css directory, relative to the page
+documentRoot: /universal-health-coverage
 
 # Note that defaults aren't recognized for github pages so you'll have to defined them all as front matter
 defaults:
