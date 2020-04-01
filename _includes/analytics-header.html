@@ -1,3 +1,4 @@
+{% if page.disable_analytics != true %}
 {% if site.analytics.legacy == false %}
     {% if site.analytics.environ == 'prod' %}
         {% assign _adobeAEMSuffix = "" %}
@@ -37,4 +38,5 @@
 			}
 </script>
 
+{% endif %}
 {% endif %}
