@@ -1,8 +1,14 @@
+---
+---
 
 /* loop breakpoints: xl: 1201, l: 992, m: 768: s: 576, xs: <576
 */
 h2, .ombc-section .ombc-title {
     margin: 20px 0px 16px 0px !important;
+}
+
+h3, h4 {
+  margin: 1.5rem 0 0.75rem 0;
 }
 	
 /* tgh: remove
@@ -29,41 +35,79 @@ div.feature-box {
   /* background: #eee; */
 }
 
+div.lp__body_content {
+  ul, ol {
+    margin-left: 1.25rem;
+    padding-left: 1rem;
+  }
 
-div.lp__card_content h5 {
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  .small-text {
+    font-size: 0.9em;
+  }
+
+  .smaller-text {
+    font-size: 0.8em;
+  }
+}
+
+div.lp__card_content {
+  h5 {
     font-family: Andes,sans-serif;
     color: #333;
     font-size: 1.25rem;
     line-height: 1.5rem;
     font-weight: 600;
-}
+  }
 
-div.lp__card_content p,
-div.lp__card_content li {
+  p, li {
     font-size: 14px;
     line-height: 20px;
     margin: 0 0 16px;
+  }
 }
 
-#dg-dashboard a.img {
-  display: block;
-}
+#dg-dashboard {
+    a.img {
+      display: block;
+    }
 
-#dg-dashboard img {
-  width: 100%;
-}
+    img {
+      width: 100%;
+    }
 
-#dg-dashboard iframe {
-  width: 100%;
-  min-width: 1075px;
-  height: 720px;
-  border: 0;
+    iframe {
+      width: 100%;
+      min-width: 1075px;
+      height: 720px;
+      border: 0;
+    }
 }
 
 table.table-indicators {
   font-size: 0.8em;
   width: 60%;
   margin: 0 auto;
+}
+
+#covid-projects {
+  font-size: 0.8em;
+
+  td, th {
+    &:nth-child(2) { text-align: center; }
+    &:nth-child(4), &:nth-child(5) { text-align: right; }
+  }
+
+  tr.summary td {
+    font-weight: bold;
+  }
 }
 
 /* min-heights so that all feature boxes are uniform height when
@@ -74,15 +118,21 @@ table.table-indicators {
    Friendly reminder: @media declarations must be in increasing
    order of min-width for the cascade to work properly
 */
+@media (min-width: 768px) {
+    div.feature-box .lp__card_wrapper {
+        min-height: 405px;
+    }
+}
+	
 @media (min-width: 991px) {
     div.feature-box .lp__card_wrapper {
-        min-height: 290px;
+        min-height: 350px;
     }
 }
 	
 @media (min-width: 1201px) {
     div.feature-box .lp__card_wrapper {
-        min-height: 270px;
+        min-height: 305px;
     }
 }
 
