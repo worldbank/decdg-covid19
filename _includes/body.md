@@ -5,6 +5,17 @@
 This collection in the World Bank data catalog contains datasets that may be useful for analysis or modelling.
 This will be expanded and improved over time.
 
+**[Social Protection Responses to Coronavirus][ugo]**.
+World Bank economist Ugo Gentilini is publishing
+an "living paper" analysis of social protection and labor policies that countries are implementing to
+protect citizens. The analysis is updated weekly and available on Ugo's blog.
+
+**[Education and Coronavirus][jp]**.
+The World Bank's Education global practice is publishing a series of briefs on school closures in
+response to the pandemic and the impacts on students. This page includes an interactive map and
+[raw data][jp-csv].
+
+
 
 #### Microdata Collections ####
 
@@ -30,3 +41,8 @@ This will be expanded and improved over time.
 [mics]: https://microdata.worldbank.org/index.php/catalog/MICS
 [dhs]: https://microdata.worldbank.org/index.php/catalog/dhs
 [ipums]: https://microdata.worldbank.org/index.php/catalog/ipums
+
+[ugo]: http://www.ugogentilini.net/
+
+[jp]: https://www.worldbank.org/en/data/interactive/2020/03/24/world-bank-education-and-covid-19
+[jp-csv]: https://dataviz.worldbank.org/t/EdStats/views/covid19/dsh_simple.csv
