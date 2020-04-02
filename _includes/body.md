@@ -1,7 +1,7 @@
 
 ## Datasets from the World Bank ##
 
-**[COVID-19 Related Datasets][ddh]**.
+**[Coronavirus (COVID-19) Related Datasets][ddh]**.
 This collection in the World Bank data catalog contains datasets that may be useful for analysis or modelling.
 This will be expanded and improved over time.
 

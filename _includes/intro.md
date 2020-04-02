@@ -1,5 +1,5 @@
 
-Data is critical to support countries in managing the global COVID-19 pandemic.
+Data is critical to support countries in managing the global coronavirus (COVID-19) pandemic.
 This site provides an array of real-time data, statistical indicators, and other
 types of data that are relevant to the coronavirus pandemic. These data are 
 drawn from the World Bank's data catalog and other authoritative sources.
