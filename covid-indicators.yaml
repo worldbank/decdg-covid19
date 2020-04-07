@@ -19,7 +19,6 @@
     SP.DYN.LE00.FE.IN: Life expectancy at birth, female (years)
     SP.DYN.LE00.IN: Life expectancy at birth, total (years)
     SP.DYN.LE00.MA.IN: Life expectancy at birth, male (years)
-    SP.DYN.AMRT: Mortality rate, adult (per 1,000 adults)
     SP.DYN.AMRT.FE: Mortality rate, adult, female (per 1,000 female adults)
     SP.DYN.AMRT.MA: Mortality rate, adult, male (per 1,000 male adults)
     SH.DYN.NCOM.ZS: Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)
