@@ -15,6 +15,8 @@ The World Bank's Education global practice is publishing a series of briefs on s
 response to the pandemic and the impacts on students. This page includes an interactive map and
 [raw data][jp-csv].
 
+** [COVID-19 Trade Flows and Policies][alvaro]**.
+The World Bank's Equitable Growth, Finance and Institutions vice-presidency has published an interactive dashboard on trade flows and policies relating to COVID-19. In particular, this provides details of global trade of medical supplies.
 
 
 #### Microdata Collections ####
@@ -46,3 +48,4 @@ response to the pandemic and the impacts on students. This page includes an inte
 
 [jp]: https://www.worldbank.org/en/data/interactive/2020/03/24/world-bank-education-and-covid-19
 [jp-csv]: https://dataviz.worldbank.org/t/EdStats/views/covid19/dsh_simple.csv
+[alvaro]: https://dataviz.worldbank.org/t/DECDG/views/Covid-19_Trade/story?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no
