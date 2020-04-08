@@ -5,6 +5,16 @@
 This collection in the World Bank data catalog contains datasets that may be useful for analysis or modelling.
 This will be expanded and improved over time.
 
+**[Map of World Bank's Operational Response to the Coronavirus][wb-cvmap]**.
+This interactive map provides a global view of all new and ongoing projects that are part
+of the [World Bank's response][wb-covid] to the coronavirus.
+
+**[Database on Coronavirus Trade Flows and Policies][wb-trade]**.
+This dataset summarizes statistics for a sub-set of key medical supplies, which
+have been identified by the WHO as key to deal with the coronavirus crisis. The
+data show trade flows and trade policies across countries and products at
+different levels of aggregation.
+
 **[Social Protection Responses to Coronavirus][ugo]**.
 World Bank economist Ugo Gentilini is publishing
 an "living paper" analysis of social protection and labor policies that countries are implementing to
@@ -46,3 +56,8 @@ response to the pandemic and the impacts on students. This page includes an inte
 
 [jp]: https://www.worldbank.org/en/data/interactive/2020/03/24/world-bank-education-and-covid-19
 [jp-csv]: https://dataviz.worldbank.org/t/EdStats/views/covid19/dsh_simple.csv
+
+[wb-cvmap]: https://maps.worldbank.org/?COVID19=true
+[wb-covid]: https://www.worldbank.org/en/who-we-are/news/coronavirus-covid19
+
+[wb-trade]: https://www.worldbank.org/en/data/interactive/2020/04/02/database-on-coronavirus-covid-19-trade-flows-and-policies
