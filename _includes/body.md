@@ -36,8 +36,6 @@ The World Bank's Education global practice is publishing a series of briefs on s
 response to the pandemic and the impacts on students. This page includes an interactive map and
 [raw data][jp-csv].
 
-
-
 #### Microdata Collections ####
 
 * **[Living Standards Measurement Study Collection][lsms]**.
