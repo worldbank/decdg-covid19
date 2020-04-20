@@ -33,6 +33,14 @@ config = {
   'build_dir': options['TARGET_DIR'],
 }
 
+def safe_cast(value, to_type=int, default=None):
+
+    try:
+        return to_type(value)
+    except (ValueError, TypeError):
+        return default
+       
+
 def hdx_refs():
 
     url = 'https://data.humdata.org/api/3/action/package_show?id=novel-coronavirus-2019-ncov-cases'
@@ -41,7 +49,7 @@ def hdx_refs():
     c, d, r = map(lambda x: x['url'], ckan['resources'][0:3])
     return c, d, r, last_modified
 
-def csse_refs():
+def csse_refs(locale='global'):
 
     try:
         git_token = os.environ['GITHUB_ANONYMOUS_TOKEN']
@@ -50,16 +58,61 @@ def csse_refs():
 
     git = Github(git_token)
     repo = git.get_repo('CSSEGISandData/COVID-19')
-    c_url, d_url, r_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_{}_global.csv'.format(x), ['confirmed', 'deaths', 'recovered'])
-    c = repo.get_contents(c_url)
-    d = repo.get_contents(d_url)
-    r = repo.get_contents(r_url)
-    
+
+    if locale == 'global':
+        c_url, d_url, r_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_{}_global.csv'.format(x), ['confirmed', 'deaths', 'recovered'])
+        c = repo.get_contents(c_url)
+        d = repo.get_contents(d_url)
+        r = repo.get_contents(r_url)
+
+        c_path, d_path, r_path = c.download_url, d.download_url, r.download_url
+        
+    elif locale == 'usa':
+        c_url, d_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_{}_US.csv'.format(x), ['confirmed', 'deaths'])
+        c = repo.get_contents(c_url)
+        d = repo.get_contents(d_url)
+        
+        c_path, d_path, r_path = c.download_url, d.download_url, None
+
     # get the modification date from the latest commit for the confirmed case file
     last_modified = repo.get_commits(path=c_url)[0].last_modified
     last_modified = datetime.strptime(last_modified, '%a, %d %b %Y %H:%M:%S %Z')    # assumes this is GMT, b/c strptime actually ignores the timezone. Else use dateutils.parser
 
-    return c.download_url, d.download_url, r.download_url, last_modified
+    return c_path, d_path, r_path, last_modified
+
+
+def get_covid_frame(url, admin2=False):
+
+    # df = pd.read_csv(url).replace(0, np.nan)
+    df = pd.read_csv(url)
+    df.rename(columns={'Province_State': 'Province/State', 'Country_Region': 'Country/Region', 'Long_': 'Long'}, inplace=True)
+    if admin2:
+        df['stp_key'] = df['Admin2'].fillna('').str.replace(r'\W','').str.upper()
+        df['geokey'] = df['Province/State'].fillna('_') + ':' + df['Country/Region'].fillna('_') + ':' + df['Admin2'].fillna('_')
+    else:
+        df['stp_key'] = df['Province/State'].fillna('').str.replace(r'\W','').str.upper()
+        df['geokey'] = df['Province/State'].fillna('_') + ':' + df['Country/Region'].fillna('_')
+
+    df.set_index('geokey', inplace=True)
+
+    return df
+
+def get_basic_data(level):
+    ''' Fetches background data at the country, usstate or uccty level
+    '''
+
+    url = 'https://raw.githubusercontent.com/tgherzog/basicdata/master/data/{}.' + level + '.csv'
+
+    pop = pd.read_csv(url.format('pop'), dtype=str).set_index('id')
+    pop['population'] = pop.population.astype('int')
+
+    area = pd.read_csv(url.format('area'), dtype=str).set_index('id')[['land_area']]
+    area['land_area'] = area.land_area.astype('int')
+
+    cen  = pd.read_csv(url.format('centroid'), dtype=str).set_index('id')[['lat', 'long']]
+    cen[['lat', 'long']] = cen[['lat', 'long']].astype('float')
+
+    return pop.join(area).join(cen)
 
 
 def to_json(c, d, r, **kwargs):
@@ -90,6 +143,7 @@ def to_json(c, d, r, **kwargs):
     return data
 
 if options['--source'] == 'hdx':
+    raise ValueError('hdx mode is no longer supported')
     confirmed_url, deaths_url, recovery_url, last_modified = hdx_refs()
 elif options['--source'] == 'csse':
     confirmed_url, deaths_url, recovery_url, last_modified = csse_refs()
@@ -99,53 +153,42 @@ else:
 config['update_date'] = datetime.strftime(last_modified, '%Y-%m-%dT%H:%M:%S')
 
 manifest = {'world': {'name': 'World', 'locales': []}}
-c = pd.read_csv(confirmed_url).replace(0, np.nan).dropna(how='all', axis=1)
-d = pd.read_csv(deaths_url).replace(0, np.nan).dropna(how='all', axis=1)
+c = get_covid_frame(confirmed_url)
+d = get_covid_frame(deaths_url)
 
-date_columns = list(filter(lambda x: x not in ['Lat', 'Long', 'Province/State', 'Country/Region'], c.columns))
+# date columns are those that look like */*/*
+date_columns = list(filter(lambda x: len(x.split('/')) == 3, c.columns))
 
-# this is the file name for subnational estimates
-c['stp_key'] = c['Province/State'].fillna('').str.replace(r'\W','').str.upper()
-
-# c, d & r aren't always in the same order, so we need to create a common index
-c['geokey'] = c['Province/State'].fillna('_') + ':' + c['Country/Region'].fillna('_')
-d['geokey'] = d['Province/State'].fillna('_') + ':' + d['Country/Region'].fillna('_')
-
-c.set_index('geokey', inplace=True)
-d.set_index('geokey', inplace=True)
+# fetch background data
+bg0 = get_basic_data('country')
+bg1 = get_basic_data('usstate').reset_index().set_index('name')
+bg2 = get_basic_data('uscty')
 
 # aggregate by country
-prov_count = c.groupby('Country/Region')[['Province/State']].count()
-lat_long   = c.groupby('Country/Region')[['Lat', 'Long']].min()
-
 c2 = c.groupby('Country/Region').sum()[date_columns]
 d2 = d.groupby('Country/Region').sum()[date_columns]
 
 if recovery_url:
-    r = pd.read_csv(recovery_url).replace(0, np.nan).dropna(how='all', axis=1)
-    r['geokey'] = r['Province/State'].fillna('_') + ':' + r['Country/Region'].fillna('_')
-    r.set_index('geokey', inplace=True)
+    r = get_covid_frame(recovery_url)
     r2 = r.groupby('Country/Region').sum()[date_columns]
 else:
     r = None
     r2 = None
 
-data = to_json(c.sum()[date_columns], d.sum()[date_columns], None if r is None else r.sum()[date_columns], iso='WLD', name='World')
+data = to_json(c.sum()[date_columns], d.sum()[date_columns], None if r is None else r.sum()[date_columns],
+        iso='WLD', name='World', display_name='World', population=safe_cast(bg0['population'].get('WLD')), land_area=safe_cast(bg0['land_area'].get('WLD')))
 with open(os.path.join(config['build_dir'], 'world.json'), 'w') as fd:
     json.dump(data, fd)
 
 
-for key in c2.index:
+for key, row in c2.iterrows():
     iso = coder(key)
     if iso:
         manifest[iso] = {'name': key, 'locales': []}
         with open(os.path.join(config['build_dir'], iso + '.json'), 'w') as fd:
-            meta = dict(iso=iso, name=key)
-            if prov_count.loc[key]['Province/State'] == 0:
-                meta['lon'] = lat_long.loc[key]['Long']
-                meta['lat'] = lat_long.loc[key]['Lat']
-
-            data = to_json(c2.loc[key], d2.loc[key], None if r2 is None else r2.loc[key], **meta)
+            data = to_json(c2.loc[key], d2.loc[key], None if r2 is None else r2.loc[key],
+                     iso=iso, name=key, display_name=key, lat=bg0['lat'].get(iso), long=bg0['long'].get(iso),
+                     population=safe_cast(bg0['population'].get(iso)), land_area=safe_cast(bg0['land_area'].get(iso)))
             json.dump(data, fd)
 
 # now write subnational data
@@ -153,9 +196,7 @@ for key in c.dropna(subset=['Province/State']).index:
     row = c.loc[key]
     iso = coder(row['Country/Region'])
 
-    # we skip rows where the latest day is empty. This eliminates county-level records
-    # in the US where a handful of cases were recorded but later counted at the state level
-    if iso and not np.isnan(row[date_columns[-1]]):
+    if iso:
         manifest[iso]['locales'].append(os.path.join(iso, row['stp_key']))
 
         try:
@@ -164,7 +205,60 @@ for key in c.dropna(subset=['Province/State']).index:
             pass
 
         with open(os.path.join(config['build_dir'], iso, row['stp_key'] + '.json'), 'w') as fd:
-            data = to_json(c.loc[key][date_columns], d.loc[key][date_columns], None if (r is None or key not in r.index) else r.loc[key][date_columns], iso=iso, name=row['Province/State'], lat=row['Lat'], lon=row['Long'])
+            data = to_json(c.loc[key][date_columns], d.loc[key][date_columns], None if (r is None or key not in r.index) else r.loc[key][date_columns],
+                     iso=iso, name=row['Province/State'], display_name='{}, {}'.format(row['Province/State'], row['Country/Region']), lat=row['Lat'], lon=row['Long'])
+            json.dump(data, fd)
+
+# subnational US data is stored separately at the county level
+confirmed_url, deaths_url, recovery_url, last_modified = csse_refs(locale='usa')
+config['update_date'] = datetime.strftime(last_modified, '%Y-%m-%dT%H:%M:%S')
+
+c = get_covid_frame(confirmed_url, True)
+d = get_covid_frame(deaths_url, True)
+r = r2 = None
+
+c['FIPS'] = c['FIPS'].map(lambda x: '{:05d}'.format(int(np.nan_to_num(x))))
+d['FIPS'] = d['FIPS'].map(lambda x: '{:05d}'.format(int(np.nan_to_num(x))))
+
+c2 = c.groupby('Province/State').sum().sort_index()
+d2 = d.groupby('Province/State').sum().sort_index()
+c2['stp_key'] = c2.index.map(lambda x: bg1['code'].get(x))
+
+iso = 'USA'
+manifest[iso]['admin2'] = {}
+try:
+    os.mkdir(os.path.join(config['build_dir'], iso))
+except:
+    pass
+
+for key, row in c2.iterrows():
+    if row['stp_key']:
+        manifest[iso]['locales'].append(os.path.join(iso, row['stp_key']))
+        manifest[iso]['admin2'][row['stp_key']] = []
+
+        with open(os.path.join(config['build_dir'], iso, row['stp_key'] + '.json'), 'w') as fd:
+            data = to_json(c2.loc[key][date_columns], d2.loc[key][date_columns], None, iso=iso,
+                    name=key, display_name='{}, {}'.format(key, iso), state_code=row['stp_key'], lat=bg1['lat'].get(key), lon=bg1['long'].get(key),
+                    population=safe_cast(bg1['population'].get(key)), land_area=safe_cast(bg1['land_area'].get(key)))
+
+            json.dump(data, fd)
+
+
+for key, row in c.dropna(subset=['Admin2']).iterrows():
+    st_abbr = bg1['code'].get(row['Province/State'])
+    if st_abbr:
+        manifest[iso]['admin2'][st_abbr].append(os.path.join(iso, st_abbr, row['stp_key']))
+        try:
+            os.mkdir(os.path.join(config['build_dir'], iso, st_abbr))
+        except:
+            pass
+
+        with open(os.path.join(config['build_dir'], iso, st_abbr, row['stp_key'] + '.json'), 'w') as fd:
+            data = to_json(c.loc[key][date_columns], d.loc[key][date_columns], None, iso=iso,
+                    fips=row['FIPS'], state_code=st_abbr, name=row['Admin2'],
+                    display_name='{} County, {}'.format(row['Admin2'], st_abbr),
+                    lat=bg2['lat'].get(row['FIPS']), lon=bg2['long'].get(row['FIPS']),
+                    population=safe_cast(bg2['population'].get(row['FIPS'])), land_area=safe_cast(bg2['land_area'].get(row['FIPS'])))
             json.dump(data, fd)
 
 with open(os.path.join(config['build_dir'], 'manifest.json'), 'w') as fd:
@@ -182,11 +276,21 @@ with open(os.path.join(config['build_dir'], 'index.html'), 'w') as fd:
         print('<li><a href="{}.json">{}</a>'.format(k, v['name']), end='', file=fd)
         if len(v['locales']) > 0:
             print('\n  <ul>', file=fd)
+            admin2 = v.get('admin2', {})
             for elem in v['locales']:
-                print('  <li><a href="{0}.json">{0}</a></li>'.format(elem), file=fd)
+                print('  <li><a href="{0}.json">{0}</a>'.format(elem), end='', file=fd)
+                (iso,stp) = elem.split('/', maxsplit=1)
+                if admin2.get(stp):
+                    print('\n    <ul>', file=fd)
+                    for cty in admin2[stp]:
+                        print('    <li><a href="{0}.json">{0}</a>'.format(cty), file=fd)
+
+                    print('    </ul></li>', file=fd)
+                else:
+                    print('</li>', file=fd)
 
             print('  </ul></li>', file=fd)
         else:
-            print('', file=fd)
+            print('</li>', file=fd)
     
     print('</ul>\n</body>\n</html>', file=fd)

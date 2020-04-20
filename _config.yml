@@ -2,7 +2,7 @@
 siteName: Universal Health Coverage Data
 analytics:
     legacy: false # true will implement the legacy analytics code instead of the latest
-    basePath: covid19/ # prefix for analytics page identifiers
+    basePath: /universal-health-coverage/coronavirus # prefix for analytics page identifiers
     channel: DEC Universal Health Coverage EXT
     environ: prod # (qa | prod)
 exclude:

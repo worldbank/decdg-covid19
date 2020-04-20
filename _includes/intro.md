@@ -9,8 +9,12 @@ and research becomes available, particularly on the economic and social impacts 
 pandemic and the [World Bank's efforts to address them][wb-covid].
 
 <div id="dg-dashboard">
+{% if page.under_construction %}
+<p class="construction">{{ page.under_construction }}</p>
+{% else %}
 <iframe src="{{ page.dash_url }}"></iframe>
 <p><a target="_new" href="{{ page.dash_url }}">Click here</a> to access the dashboard in a separate window.</p>
+{% endif %}
 </div>
 
 *Sources: [Johns Hopkins University Center for Systems Science and Engineering][jhu1] via [Github][jhu2]; [World Development Indicators][wb1]*
