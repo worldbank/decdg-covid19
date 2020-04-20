@@ -9,6 +9,17 @@ This will be expanded and improved over time.
 This interactive map provides a global view of all new and ongoing projects that are part
 of the [World Bank's response][wb-covid] to the coronavirus.
 
+**[The impact of the Coronavirus on global poverty][blog-pov1]**.
+Using data from [Povalnet][povcal], this interactive analysis looks at how COVID-19 may impact
+the number of people living in extreme poverty, both globally and regionally.
+{: #povcal :}
+
+**[Financial Sector Support Measures in Response to the Coronavirus][fci-map]**.
+This dashboard tracks measures that countries are rolling out in support of their financial sectors in response to the COVID-19
+epidemic. It is updated using information from official sources, other international organizations, and World Bank Group
+regional teams.
+{: #finmeasures :}
+
 **[Database on Coronavirus Trade Flows and Policies][wb-trade]**.
 This dataset summarizes statistics for a sub-set of key medical supplies, which
 have been identified by the WHO as key to deal with the coronavirus crisis. The
@@ -61,3 +72,6 @@ response to the pandemic and the impacts on students. This page includes an inte
 [wb-covid]: https://www.worldbank.org/en/who-we-are/news/coronavirus-covid19
 
 [wb-trade]: https://www.worldbank.org/en/data/interactive/2020/04/02/database-on-coronavirus-covid-19-trade-flows-and-policies
+[fci-map]: https://dataviz.worldbank.org/views/FS-COVID19/Overview?:embed=y&:isGuestRedirectFromVizportal=y&:display_count=n&:showAppBanner=false&:origin=viz_share_link&:showVizHome=n
+[blog-pov1]: https://blogs.worldbank.org/opendata/impact-covid-19-coronavirus-global-poverty-why-sub-saharan-africa-might-be-region-hardest
+[povcal]: http://iresearch.worldbank.org/PovcalNet/home.aspx

@@ -42,6 +42,19 @@ p.construction {
   border: 1px solid pink;
 }
 
+p.newfeatures {
+  margin: 0.5em 2em;
+  padding: 0.5em;
+  background: rgba(39, 128, 227, 0.25);
+  font-size: 0.8em;
+  color: black;
+
+  em {
+    font-style: normal;
+    color: red;
+  }
+}
+
 div.lp__body_content {
   ul, ol {
     margin-left: 1.25rem;

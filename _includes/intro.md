@@ -1,4 +1,7 @@
 
+*New:* [Financial sector support measures](#finmeasures) and [Impacts on global poverty](#povcal)
+{: .newfeatures :}
+
 Data is critical to support countries in managing the global coronavirus (COVID-19) pandemic.
 This site provides an array of real-time data, statistical indicators, and other
 types of data that are relevant to the coronavirus pandemic. These data are 
