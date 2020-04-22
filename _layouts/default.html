@@ -91,32 +91,22 @@
 </div>
 
 <!-- BEGIN BOX-FEATURES -->
-{% assign boxes = 'box-feature-data.md,box-feature-info.md' | split: ',' %}
-<div class="section-wrapper feature-box">
+<div class="section-wrapper section-resources">
     <div class="container">
         <h2>Resources</h2>
     <div class="par parsys">
         <div class="gridlayout parbase section">
             <div class="row">
-{% for box in boxes %}
-                <div class="col col-md-6 colsplit" id="">
-                    <div class=" ">
-                        <div class="grid_4_par_2 parsys">
-                            <div style="padding-left:0px;padding-right:0px;" class="remove-padding-grid">
-                                <div class="redesign_Projectcard section">
+{% for box in page.resources.elements %}
+                <div class="{{ page.resources.class }}">
                                     <div class="lp__card loop_card_title_text_links">
                                         <div class="lp__card_wrapper">
                                             <div class="lp__card_content">
-{% capture box_md %}{% include {{ box }} %}{% endcapture %}
+{% capture box_md %}{% include {{ box.file }} %}{% endcapture %}
 {{ box_md | markdownify }}
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 {% endfor %}
             </div> <!-- class.row -->
@@ -133,7 +123,7 @@
         <div class="row">
             <div class="col-sm-12">
 
-            <h2>Relevant Indicators</h2>
+            <h2 id="indicators">Relevant Indicators</h2>
 
             <p>This table is also available in <a href="covid-indicators.json">JSON</a> or <a href="covid-indicators.yaml">YAML</a> formats.</p>
 

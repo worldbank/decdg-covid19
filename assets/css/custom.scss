@@ -31,10 +31,6 @@ div.section-wrapper.first {
   margin-top: 64px;
 }
 
-div.feature-box {
-  /* background: #eee; */
-}
-
 p.construction {
   margin: 1.5em;
   padding: 0.5em;
@@ -53,6 +49,14 @@ p.newfeatures {
     font-style: normal;
     color: red;
   }
+}
+
+div.lp__card_wrapper {
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 2px 1px #e5e5e5;
+  -webkit-box-shadow: 0 1px 2px 1px #e5e5e5;
+  -moz-box-shadow: 0 1px 2px 1px #e5e5e5;
+  -o-box-shadow: 0 1px 2px 1px #e5e5e5;
 }
 
 div.lp__body_content {
@@ -139,19 +143,19 @@ table.table-indicators {
    order of min-width for the cascade to work properly
 */
 @media (min-width: 768px) {
-    div.feature-box .lp__card_wrapper {
+    div.section-resources .lp__card_wrapper {
         min-height: 405px;
     }
 }
 	
 @media (min-width: 991px) {
-    div.feature-box .lp__card_wrapper {
-        min-height: 350px;
+    div.section-resources .lp__card_wrapper {
+        min-height: 367px;
     }
 }
 	
 @media (min-width: 1201px) {
-    div.feature-box .lp__card_wrapper {
+    div.section-resources .lp__card_wrapper {
         min-height: 305px;
     }
 }
