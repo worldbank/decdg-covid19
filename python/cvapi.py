@@ -81,6 +81,10 @@ def csse_refs(locale='global'):
     return c_path, d_path, r_path, last_modified
 
 
+def get_date_columns(df):
+
+    return list(filter(lambda x: len(x.split('/')) == 3, df.columns))
+
 def get_covid_frame(url, admin2=False):
 
     # df = pd.read_csv(url).replace(0, np.nan)
@@ -94,6 +98,8 @@ def get_covid_frame(url, admin2=False):
         df['geokey'] = df['Province/State'].fillna('_') + ':' + df['Country/Region'].fillna('_')
 
     df.set_index('geokey', inplace=True)
+    dates = get_date_columns(df)
+    df[dates] = df[dates].replace(-1, np.nan) # this seems to be used as a missing value in the cruise ship data for Canada
 
     return df
 
@@ -132,11 +138,11 @@ def to_json(c, d, r, **kwargs):
         ts = datetime.strptime(i, '%m/%d/%y')   # e.g., 3/12/20
         key = datetime.strftime(ts, '%Y/%m/%d')
 
-        row = {'date': key, 'confirmed': int(np.nan_to_num(c[i])), 'deaths': int(np.nan_to_num(d[i]))}
+        row = {'date': key, 'confirmed': safe_cast(c[i]), 'deaths': safe_cast(d[i])}
         if r is None:
             row['recovered'] = None
         else:
-            row['recovered'] = int(np.nan_to_num(r[i]))
+            row['recovered'] = safe_cast(r[i])
 
         data['data'].append(row)
 
@@ -157,7 +163,7 @@ c = get_covid_frame(confirmed_url)
 d = get_covid_frame(deaths_url)
 
 # date columns are those that look like */*/*
-date_columns = list(filter(lambda x: len(x.split('/')) == 3, c.columns))
+date_columns = get_date_columns(c)
 
 # fetch background data
 bg0 = get_basic_data('country')
@@ -192,8 +198,7 @@ for key, row in c2.iterrows():
             json.dump(data, fd)
 
 # now write subnational data
-for key in c.dropna(subset=['Province/State']).index:
-    row = c.loc[key]
+for key,row in c.dropna(subset=['Province/State']).iterrows():
     iso = coder(row['Country/Region'])
 
     if iso:
