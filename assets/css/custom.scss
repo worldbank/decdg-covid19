@@ -51,6 +51,18 @@ p.newfeatures {
   }
 }
 
+div.section-features {
+    h2 {
+      text-align: center;
+    }
+
+    div.lp__card_content h5 {
+      font-weight: normal;
+      font-size: 1rem;
+      margin: 0;
+    }
+}
+
 div.lp__card_wrapper {
   border: 1px solid #e5e5e5;
   box-shadow: 0 1px 2px 1px #e5e5e5;
@@ -142,9 +154,21 @@ table.table-indicators {
    Friendly reminder: @media declarations must be in increasing
    order of min-width for the cascade to work properly
 */
+div.section-features .lp__card_wrapper {
+    min-height: 251px;
+}
+
 @media (min-width: 768px) {
     div.section-resources .lp__card_wrapper {
         min-height: 405px;
+    }
+
+    div.section-features .lp__card_wrapper {
+        min-height: 290px;
+    }
+
+    div.section-features div.lp__card_content h5 {
+      font-size: 1.25rem;
     }
 }
 	
@@ -157,6 +181,13 @@ table.table-indicators {
 @media (min-width: 1201px) {
     div.section-resources .lp__card_wrapper {
         min-height: 305px;
+    }
+}
+
+@media (min-width: 991px) {
+    /* limit how wide this section gets */
+    div.section-features div.container {
+        width: 750px;
     }
 }
 

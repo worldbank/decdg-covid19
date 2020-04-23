@@ -77,6 +77,41 @@
     </div>
 </div>
 
+{% if page.features %}
+<!-- BEGIN BOX-FEATURES -->
+<div class="section-wrapper section-features">
+    <div class="container">
+        <h2 id="features">Features</h2>
+    <div class="par parsys">
+        <div class="gridlayout parbase section">
+            <div class="row">
+{% for box in page.features.elements %}
+{% if box.id %}
+{% assign id_attr = 'id="' | append: box.id | append: '" ' %}
+{% else %}
+{% assign id_attr = '' %}
+{% endif %}
+                <div {{ id_attr }}class="{{ page.resources.class }}">
+                                    <div class="lp__card">
+                                        <div class="lp__card_wrapper">
+                                            <a href="{{ box.link }}"><img src="assets/feature-images/{{ box.image }}" class="lp__img_responsive"/></a>
+                                            <div class="lp__card_content">
+                                            <a href="{{ box.link }}"><h5>{{ box.title }}</h5></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                </div>
+{% endfor %}
+            </div> <!-- class.row -->
+            <div class="clearfix"></div>
+            <div style="margin-bottom: 0px"></div>
+        </div> <!-- class.gridlayout parbase section -->
+    </div> <!-- class.par parsys -->
+    </div> <!-- class.container -->
+</div> <!-- class.feature-box -->
+<!-- END BOX-FEATURES -->
+{% endif %}
+
 <div class="section-wrapper lp__body_content">
     <div class="container">
         <div class="row">
