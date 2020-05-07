@@ -9,6 +9,13 @@ This will be expanded and improved over time.
 This interactive map provides a global view of all new and ongoing projects that are part
 of the [World Bank's response][wb-covid] to the coronavirus.
 
+**World Integrated Trade Solution (WITS)**.
+This platform for trade data and analysis now provides data on
+[trade flows](https://wits.worldbank.org/trade/covid-19-medical-products.aspx) and
+[tariffs](https://wits.worldbank.org/tariff/trains/country-byhs6product.aspx?lang=en)
+for COVID-19 test kits and other essential medical supplies and goods.
+{: #wits :}
+
 **[The impact of the Coronavirus on global poverty][blog-pov1]**.
 Using data from [Povalnet][povcal], this interactive analysis looks at how COVID-19 may impact
 the number of people living in extreme poverty, both globally and regionally.

@@ -1,5 +1,5 @@
 
-*New:* [Financial sector support measures](#finmeasures) and [Impacts on global poverty](#povcal)
+*New:* [Trade flows & tariffs for key medical supplies](#wits) and [Impacts on global poverty](#povcal)
 {: .newfeatures :}
 
 Data is critical to support countries in managing the global coronavirus (COVID-19) pandemic.
