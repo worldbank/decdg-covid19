@@ -59,19 +59,28 @@ def csse_refs(locale='global'):
     git = Github(git_token)
     repo = git.get_repo('CSSEGISandData/COVID-19')
 
+    # we can't use get_contents to fetch large files directly, so we have to iterate over the directory to get their raw
+    # URLs. See https://medium.com/@caludio/how-to-download-large-files-from-github-4863a2dbba3b
     if locale == 'global':
         c_url, d_url, r_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_{}_global.csv'.format(x), ['confirmed', 'deaths', 'recovered'])
-        c = repo.get_contents(c_url)
-        d = repo.get_contents(d_url)
-        r = repo.get_contents(r_url)
+        for elem in repo.get_contents('csse_covid_19_data/csse_covid_19_time_series'):
+            if elem.path == c_url:
+                c = elem
+            elif elem.path == d_url:
+                d = elem
+            elif elem.path == r_url:
+                r = elem
 
         c_path, d_path, r_path = c.download_url, d.download_url, r.download_url
         
     elif locale == 'usa':
         c_url, d_url = map(lambda x: 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_{}_US.csv'.format(x), ['confirmed', 'deaths'])
-        c = repo.get_contents(c_url)
-        d = repo.get_contents(d_url)
-        
+        for elem in repo.get_contents('csse_covid_19_data/csse_covid_19_time_series'):
+            if elem.path == c_url:
+                c = elem
+            elif elem.path == d_url:
+                d = elem
+
         c_path, d_path, r_path = c.download_url, d.download_url, None
 
     # get the modification date from the latest commit for the confirmed case file
