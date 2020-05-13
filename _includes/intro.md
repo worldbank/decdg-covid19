@@ -1,5 +1,6 @@
 
-*New:* [Trade flows & tariffs for key medical supplies](#wits) and [Impacts on global poverty](#povcal)
+*New:* [CCSA report](#ccsa), plus impacts of the coronavirus pandemic on [commodity markets](#commodities), [remittances](#remittances),
+and [global poverty](#povcal).
 {: .newfeatures :}
 
 Data is critical to support countries in managing the global coronavirus (COVID-19) pandemic.

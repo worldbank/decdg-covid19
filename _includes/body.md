@@ -1,5 +1,5 @@
 
-## Datasets from the World Bank ##
+## Datasets from the World Bank ## {#datasets}
 
 **[Coronavirus (COVID-19) Related Datasets][ddh]**.
 This collection in the World Bank data catalog contains datasets that may be useful for analysis or modelling.
@@ -9,17 +9,26 @@ This will be expanded and improved over time.
 This interactive map provides a global view of all new and ongoing projects that are part
 of the [World Bank's response][wb-covid] to the coronavirus.
 
+**[Impacts of Coronavirus on Remittances][remittances]**.
+Using the latest [remittance data](https://www.knomad.org/data/remittances) from the
+[Global Knowledge Partnership on Migration and Development](https://www.knomad.org/),
+the World Bank projects that global remittances will decline by about 20 percent
+in 2020 due to economic impacts of COVID-19.
+{: #remittances :}
+
+**[Coronavirus Rattles Commodity Markets][commodities]**.
+The [April edition of the Commodity Markets Outlook](https://openknowledge.worldbank.org/bitstream/handle/10986/33624/CMO-April-2020.pdf)
+reports severe impacts on commodities markets from the pandemic, particularly related to transportation, and raises concerns
+about food security. Commodity markets data is published bi-monthly on the
+[commodity markets website](https://www.worldbank.org/en/research/commodity-markets).
+{: #commodities :}
+
 **World Integrated Trade Solution (WITS)**.
 This platform for trade data and analysis now provides data on
 [trade flows](https://wits.worldbank.org/trade/covid-19-medical-products.aspx) and
 [tariffs](https://wits.worldbank.org/tariff/trains/country-byhs6product.aspx?lang=en)
 for COVID-19 test kits and other essential medical supplies and goods.
 {: #wits :}
-
-**[The impact of the Coronavirus on global poverty][blog-pov1]**.
-Using data from [Povalnet][povcal], this interactive analysis looks at how COVID-19 may impact
-the number of people living in extreme poverty, both globally and regionally.
-{: #povcal :}
 
 **[Financial Sector Support Measures in Response to the Coronavirus][fci-map]**.
 This dashboard tracks measures that countries are rolling out in support of their financial sectors in response to the COVID-19
@@ -32,11 +41,6 @@ This dataset summarizes statistics for a sub-set of key medical supplies, which
 have been identified by the WHO as key to deal with the coronavirus crisis. The
 data show trade flows and trade policies across countries and products at
 different levels of aggregation.
-
-**[Social Protection Responses to Coronavirus][ugo]**.
-World Bank economist Ugo Gentilini is publishing
-an "living paper" analysis of social protection and labor policies that countries are implementing to
-protect citizens. The analysis is updated weekly and available on Ugo's blog.
 
 **[Education and Coronavirus][jp]**.
 The World Bank's Education global practice is publishing a series of briefs on school closures in
@@ -61,6 +65,27 @@ response to the pandemic and the impacts on students. This page includes an inte
   Integrated Public Use Microdata Series (IPUMS) collection of harmonized census microdata from around the world.
 {: .small-text :}
 
+## Analyses ##
+
+**[How COVID-19 is Changing the World: A Statistical Perspective][ccsa]**.
+The UN [Committee for the Coordination of Statistical Activities](https://unstats.un.org/unsd/ccsa)
+has published a collection of statistical briefs by its member organizations covering the impacts of the 
+pandemic across economic and social domains.  [Download the report here][ccsa] or read the Bank's
+[blog post](https://blogs.worldbank.org/opendata/how-covid-19-changing-world-statistical-perspective-international-agencies).
+{: #ccsa :}
+
+**[The impact of the Coronavirus on global poverty][blog-pov1]**.
+Using data from [Povalnet][povcal], this interactive analysis looks at how COVID-19 may impact
+the number of people living in extreme poverty, both globally and regionally.
+{: #povcal :}
+
+**[Social Protection Responses to Coronavirus][ugo]**.
+World Bank economist Ugo Gentilini is publishing
+a "living paper" analysis of social protection and labor policies that countries are implementing to
+protect citizens. The analysis is updated weekly and available on Ugo's blog.
+
+
+[ccsa]: https://unstats.un.org/unsd/ccsa/documents/covid19-report-ccsa.pdf
 [ddh]: https://datacatalog.worldbank.org/search?search_api_views_fulltext_op=AND&f%5B0%5D=field_collection_field%3A2026&sort_by=field_wbddh_modified_date
 [lsms]: https://microdatalib.worldbank.org/index.php/catalog/LSMS
 [who]: https://microdata.worldbank.org/index.php/catalog/WHO
@@ -80,3 +105,5 @@ response to the pandemic and the impacts on students. This page includes an inte
 [fci-map]: https://dataviz.worldbank.org/views/FS-COVID19/Overview?:embed=y&:isGuestRedirectFromVizportal=y&:display_count=n&:showAppBanner=false&:origin=viz_share_link&:showVizHome=n
 [blog-pov1]: https://blogs.worldbank.org/opendata/impact-covid-19-coronavirus-global-poverty-why-sub-saharan-africa-might-be-region-hardest
 [povcal]: http://iresearch.worldbank.org/PovcalNet/home.aspx
+[remittances]: https://www.worldbank.org/en/news/press-release/2020/04/22/world-bank-predicts-sharpest-decline-of-remittances-in-recent-history
+[commodities]: https://www.worldbank.org/en/news/feature/2020/04/23/coronavirus-shakes-commodity-markets
