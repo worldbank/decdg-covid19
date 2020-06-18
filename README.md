@@ -44,3 +44,12 @@ a "moreinfo" object in the front matter of index.md and defining two arrays for 
 and right-side links. index.md includes a template for doing this which is currently
 disabled. This has not really been tested much and the CSS will likely need some tweaking.
 
+### Updating the public page ###
+
+The public page and its component files live here:
+
+`\\w2msddpqan51\wwwdatatopics\universal-health-coverage\coronavirus`
+
+or at this public URL:
+
+http://datatopics.worldbank.org/univeral-health-coverage/coronavirus
