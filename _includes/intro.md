@@ -1,6 +1,6 @@
 
-*New:* [CCSA report](#ccsa), plus impacts of the coronavirus pandemic on [commodity markets](#commodities), [remittances](#remittances),
-and [global poverty](#povcal).
+*New:* an [indicator of relative severity](#severe);
+updated impacts on [global poverty](#povcal) and [statistical capacity](#nso).
 {: .newfeatures :}
 
 Data is critical to support countries in managing the global coronavirus (COVID-19) pandemic.

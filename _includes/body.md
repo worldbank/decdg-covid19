@@ -67,6 +67,21 @@ response to the pandemic and the impacts on students. This page includes an inte
 
 ## Analyses ##
 
+**[COVID-19 Mortality in Rich and Poor Countries : A Tale of Two Pandemics][severity]**.
+Using a new indicator that expresses severity of coronavirus impacts relative to pre-pandemic
+patterns, this analysis documents inequality in how coronavirus is impacting countries and argues
+that the excessive skew towards rich countries is inconsistent with demography.
+{: #severe :}
+
+**[Monitoring the state of statistical operations under the COVID-19 pandemic][unsd]**.
+The [UN Statistics Division](https://unstats.un.org) and the World Bank have published
+this report describing the
+severe impacts of the pandemic on the operations and capacity of national statistical offices, especially in low- and
+middle-income countries. [Download the report here][unsd] or read the
+[joint blog post](https://blogs.worldbank.org/opendata/covid-19-widens-gulf-global-data-inequality-while-national-statistical-offices-step-up).
+{: #nso :}
+
+
 **[How COVID-19 is Changing the World: A Statistical Perspective][ccsa]**.
 The UN [Committee for the Coordination of Statistical Activities](https://unstats.un.org/unsd/ccsa)
 has published a collection of statistical briefs by its member organizations covering the impacts of the 
@@ -74,9 +89,10 @@ pandemic across economic and social domains.  [Download the report here][ccsa] o
 [blog post](https://blogs.worldbank.org/opendata/how-covid-19-changing-world-statistical-perspective-international-agencies).
 {: #ccsa :}
 
-**[The impact of the Coronavirus on global poverty][blog-pov1]**.
+**[Updated estimates of the impact of COVID-19 on global poverty][blog-pov2]**.
 Using data from [Povalnet][povcal], this interactive analysis looks at how COVID-19 may impact
-the number of people living in extreme poverty, both globally and regionally.
+the number of people living in extreme poverty, both globally and regionally. This analysis
+was [updated on June 8th][blog-pov2]; the [original analysis is here][blog-pov1].
 {: #povcal :}
 
 **[Social Protection Responses to Coronavirus][ugo]**.
@@ -86,6 +102,7 @@ protect citizens. The analysis is updated weekly and available on Ugo's blog.
 
 
 [ccsa]: https://unstats.un.org/unsd/ccsa/documents/covid19-report-ccsa.pdf
+[unsd]: https://unstats.un.org/unsd/covid19-response/covid19-nso-survey-report.pdf
 [ddh]: https://datacatalog.worldbank.org/search?search_api_views_fulltext_op=AND&f%5B0%5D=field_collection_field%3A2026&sort_by=field_wbddh_modified_date
 [lsms]: https://microdatalib.worldbank.org/index.php/catalog/LSMS
 [who]: https://microdata.worldbank.org/index.php/catalog/WHO
@@ -104,6 +121,8 @@ protect citizens. The analysis is updated weekly and available on Ugo's blog.
 [wb-trade]: https://www.worldbank.org/en/data/interactive/2020/04/02/database-on-coronavirus-covid-19-trade-flows-and-policies
 [fci-map]: https://dataviz.worldbank.org/views/FS-COVID19/Overview?:embed=y&:isGuestRedirectFromVizportal=y&:display_count=n&:showAppBanner=false&:origin=viz_share_link&:showVizHome=n
 [blog-pov1]: https://blogs.worldbank.org/opendata/impact-covid-19-coronavirus-global-poverty-why-sub-saharan-africa-might-be-region-hardest
+[blog-pov2]: https://blogs.worldbank.org/opendata/updated-estimates-impact-covid-19-global-poverty
 [povcal]: http://iresearch.worldbank.org/PovcalNet/home.aspx
 [remittances]: https://www.worldbank.org/en/news/press-release/2020/04/22/world-bank-predicts-sharpest-decline-of-remittances-in-recent-history
 [commodities]: https://www.worldbank.org/en/news/feature/2020/04/23/coronavirus-shakes-commodity-markets
+[severity]: http://documents.worldbank.org/curated/en/559181590712052524/COVID-19-Mortality-in-Rich-and-Poor-Countries-A-Tale-of-Two-Pandemics

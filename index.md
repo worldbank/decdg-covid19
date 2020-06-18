@@ -7,8 +7,8 @@ meta_description:  "Explore Coronavirus-related global data including: confirmed
 features:
   class: col-xs-6
   elements:
-    - title: The impact of the Coronavirus on global poverty
-      link:  https://blogs.worldbank.org/opendata/impact-covid-19-coronavirus-global-poverty-why-sub-saharan-africa-might-be-region-hardest
+    - title: Updated estimates of the impact of COVID-19 on global poverty
+      link:  https://blogs.worldbank.org/opendata/updated-estimates-impact-covid-19-global-poverty
       image: poverty-analysis.png
       # id: povcal
     - title: Map of World Bank’s Operational Response to the Coronavirus
