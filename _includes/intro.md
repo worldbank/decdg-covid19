@@ -1,6 +1,6 @@
 
-*New:* an [indicator of relative severity](#severe);
-updated impacts on [global poverty](#povcal) and [statistical capacity](#nso).
+*New:* latest [blog posts](#blogs); an [indicator of relative severity](#severe);
+and updated impacts on [global poverty](#povcal).
 {: .newfeatures :}
 
 Data is critical to support countries in managing the global coronavirus (COVID-19) pandemic.

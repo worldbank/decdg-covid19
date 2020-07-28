@@ -122,6 +122,18 @@
 
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+            <h2 id="blogs">Blog Posts</h2>
+            <ul>
+{% for post in page.blogs %}
+                <li><a href="{{ post.link }}">{{ post.title }}</a> ({{ post.date }})</li>
+{% endfor %}
+            </ul>
+            <p class="small-text"><a href="https://blogs.worldbank.org/search?f%5B0%5D=channel%3A4&f%5B1%5D=language%3Aen&f%5B2%5D=series%3A881">More posts on COVID-19</a></p>
+            </div>
+        </div>
     </div>
 </div>
 
