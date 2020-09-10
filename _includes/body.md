@@ -73,19 +73,19 @@ patterns, this analysis documents inequality in how coronavirus is impacting cou
 that the excessive skew towards rich countries is inconsistent with demography.
 {: #severe :}
 
-**[Monitoring the state of statistical operations under the COVID-19 pandemic][unsd]**.
-The [UN Statistics Division](https://unstats.un.org) and the World Bank have published
-this report describing the
+**[Monitoring the state of statistical operations under the COVID-19 pandemic][unsd2-blog]**.
+The [UN Statistics Division](https://unstats.un.org) and the World Bank have published two rounds of reports describing the
 severe impacts of the pandemic on the operations and capacity of national statistical offices, especially in low- and
-middle-income countries. [Download the report here][unsd] or read the
-[joint blog post](https://blogs.worldbank.org/opendata/covid-19-widens-gulf-global-data-inequality-while-national-statistical-offices-step-up).
+middle-income countries.
+The first round ([report][unsd1] | [blog post][unsd1-blog]) of the survey provided a snapshot as of May 2020, while the second round
+([report][unsd2] | [blog post][unsd2-blog]) looked at changes over time and how national and international stakeholders are responding.
 {: #nso :}
 
 
-**[How COVID-19 is Changing the World: A Statistical Perspective][ccsa]**.
+**[How COVID-19 is Changing the World: A Statistical Perspective][ccsa2]**.
 The UN [Committee for the Coordination of Statistical Activities](https://unstats.un.org/unsd/ccsa)
-has published a collection of statistical briefs by its member organizations covering the impacts of the 
-pandemic across economic and social domains.  [Download the report here][ccsa] or read the Bank's
+has published two volumes of statistical briefs by its member organizations covering the impacts of the 
+pandemic across economic and social domains.  Download the reports here ([volume 1][ccsa1] | [volume 2][ccsa2]) or read the Bank's
 [blog post](https://blogs.worldbank.org/opendata/how-covid-19-changing-world-statistical-perspective-international-agencies).
 {: #ccsa :}
 
@@ -101,14 +101,20 @@ a "living paper" analysis of social protection and labor policies that countries
 protect citizens. The analysis is updated weekly and available on Ugo's blog.
 
 
-[ccsa]: https://unstats.un.org/unsd/ccsa/documents/covid19-report-ccsa.pdf
-[unsd]: https://unstats.un.org/unsd/covid19-response/covid19-nso-survey-report.pdf
+[ccsa1]: https://unstats.un.org/unsd/ccsa/documents/covid19-report-ccsa.pdf
+[ccsa2]: https://unstats.un.org/unsd/ccsa/documents/covid19-report-ccsa_vol2.pdf
+
 [ddh]: https://datacatalog.worldbank.org/search?search_api_views_fulltext_op=AND&f%5B0%5D=field_collection_field%3A2026&sort_by=field_wbddh_modified_date
 [lsms]: https://microdatalib.worldbank.org/index.php/catalog/LSMS
 [who]: https://microdata.worldbank.org/index.php/catalog/WHO
 [mics]: https://microdata.worldbank.org/index.php/catalog/MICS
 [dhs]: https://microdata.worldbank.org/index.php/catalog/dhs
 [ipums]: https://microdata.worldbank.org/index.php/catalog/ipums
+
+[unsd1]: https://unstats.un.org/unsd/covid19-response/covid19-nso-survey-report.pdf
+[unsd2]: https://unstats.un.org/unsd/covid19-response/covid19-nso-survey-report-2.pdf
+[unsd1-blog]: https://blogs.worldbank.org/opendata/covid-19-widens-gulf-global-data-inequality-while-national-statistical-offices-step-up
+[unsd2-blog]: https://blogs.worldbank.org/opendata/coping-pandemic-crisis-what-do-national-statistical-offices-need-most
 
 [ugo]: http://www.ugogentilini.net/
 

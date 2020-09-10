@@ -33,17 +33,18 @@ moreinfo_disabled:
  
 # get latest blogs from: https://blogs.worldbank.org/search?f%5B0%5D=channel%3A4&f%5B1%5D=language%3Aen&f%5B2%5D=series%3A881
 blogs:
-   - title: "Roller coaster ride for metals amid the COVID-19 pandemic"
-     date:  July 20
-     link:  https://blogs.worldbank.org/opendata/roller-coaster-ride-metals-amid-covid-19-pandemic
-   - title: "Monitoring the impact of COVID-19 and climate change on pastoral populations in the Sahel"
-     date:  July 16
-     link:  https://blogs.worldbank.org/opendata/monitoring-impact-covid-19-and-climate-change-pastoral-populations-sahel
-   - title: "New tool facilitates greater transparency and coordination in COVID-19 financing"
-     date:  July 15
-     link:  https://blogs.worldbank.org/opendata/new-tool-facilitates-greater-transparency-and-coordination-covid-19-financing
-   - title: "Understanding global debt: Relieving the COVID-19 impact on the most vulnerable"
-     date:  July 8
-     link:  https://blogs.worldbank.org/opendata/understanding-global-debt-relieving-covid-19-impact-most-vulnerable
+- date: August 26
+  link: https://blogs.worldbank.org/opendata/uganda-high-frequency-phone-survey-covid-19-results-round-1
+  title: 'Uganda High-Frequency Phone Survey on COVID-19: Results from round 1'
+- date: August 19
+  link: https://blogs.worldbank.org/opendata/high-frequency-monitoring-covid-19-impacts-first-results-malawi
+  title: 'High-frequency monitoring of COVID-19 impacts: first results from Malawi'
+- date: August 17
+  link: https://blogs.worldbank.org/opendata/coping-pandemic-crisis-what-do-national-statistical-offices-need-most
+  title: 'Coping with the pandemic crisis: what do national statistical offices need the most?'
+- date: July 20
+  link: https://blogs.worldbank.org/opendata/roller-coaster-ride-metals-amid-covid-19-pandemic
+  title: Roller coaster ride for metals amid the COVID-19 pandemic
+
 ---
 
