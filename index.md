@@ -33,6 +33,9 @@ moreinfo_disabled:
  
 # get latest blogs from: https://blogs.worldbank.org/search?f%5B0%5D=channel%3A4&f%5B1%5D=language%3Aen&f%5B2%5D=series%3A881
 blogs:
+- date: September 10
+  link: https://blogs.worldbank.org/opendata/hidden-potential-mobile-phone-data-insights-covid-19-gambia
+  title: 'The hidden potential of mobile phone data: Insights on COVID-19 in The Gambia'
 - date: August 26
   link: https://blogs.worldbank.org/opendata/uganda-high-frequency-phone-survey-covid-19-results-round-1
   title: 'Uganda High-Frequency Phone Survey on COVID-19: Results from round 1'
@@ -42,9 +45,6 @@ blogs:
 - date: August 17
   link: https://blogs.worldbank.org/opendata/coping-pandemic-crisis-what-do-national-statistical-offices-need-most
   title: 'Coping with the pandemic crisis: what do national statistical offices need the most?'
-- date: July 20
-  link: https://blogs.worldbank.org/opendata/roller-coaster-ride-metals-amid-covid-19-pandemic
-  title: Roller coaster ride for metals amid the COVID-19 pandemic
 
 ---
 
