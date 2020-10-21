@@ -33,18 +33,18 @@ moreinfo_disabled:
  
 # get latest blogs from: https://blogs.worldbank.org/search?f%5B0%5D=channel%3A4&f%5B1%5D=language%3Aen&f%5B2%5D=series%3A881
 blogs:
-- date: September 10
-  link: https://blogs.worldbank.org/opendata/hidden-potential-mobile-phone-data-insights-covid-19-gambia
-  title: 'The hidden potential of mobile phone data: Insights on COVID-19 in The Gambia'
-- date: August 26
-  link: https://blogs.worldbank.org/opendata/uganda-high-frequency-phone-survey-covid-19-results-round-1
-  title: 'Uganda High-Frequency Phone Survey on COVID-19: Results from round 1'
-- date: August 19
-  link: https://blogs.worldbank.org/opendata/high-frequency-monitoring-covid-19-impacts-first-results-malawi
-  title: 'High-frequency monitoring of COVID-19 impacts: first results from Malawi'
-- date: August 17
-  link: https://blogs.worldbank.org/opendata/coping-pandemic-crisis-what-do-national-statistical-offices-need-most
-  title: 'Coping with the pandemic crisis: what do national statistical offices need the most?'
+- date: October 9
+  link: https://blogs.worldbank.org/opendata/projecting-global-extreme-poverty-2030-how-close-are-we-world-banks-3-goal
+  title: "Projecting global extreme poverty up to 2030: How close are we to World Bank\u2019s 3% goal?"
+- date: October 9
+  link: https://blogs.worldbank.org/opendata/investing-girls-education-time-covid-19
+  title: "Investing in girls\u2019 education in the time of COVID-19"
+- date: October 7
+  link: https://blogs.worldbank.org/opendata/updated-estimates-impact-covid-19-global-poverty-effect-new-data
+  title: 'Updated estimates of the impact of COVID-19 on global poverty: The effect of new data'
+- date: October 7
+  link: https://blogs.worldbank.org/opendata/east-asia-and-pacific-what-will-resilient-recovery-require
+  title: 'East Asia and the Pacific: What will a resilient recovery require?'
 
 ---
 
