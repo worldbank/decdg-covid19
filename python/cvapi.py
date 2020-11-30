@@ -36,6 +36,9 @@ config = {
 def safe_cast(value, to_type=int, default=None):
 
     try:
+        if np.isnan(value):
+            return default
+
         return to_type(value)
     except (ValueError, TypeError):
         return default
@@ -202,7 +205,7 @@ for key, row in c2.iterrows():
         manifest[iso] = {'name': key, 'locales': []}
         with open(os.path.join(config['build_dir'], iso + '.json'), 'w') as fd:
             data = to_json(c2.loc[key], d2.loc[key], None if r2 is None else r2.loc[key],
-                     iso=iso, name=key, display_name=key, lat=bg0['lat'].get(iso), long=bg0['long'].get(iso),
+                     iso=iso, name=key, display_name=key, lat=safe_cast(bg0['lat'].get(iso), float), long=safe_cast(bg0['long'].get(iso), float),
                      population=safe_cast(bg0['population'].get(iso)), land_area=safe_cast(bg0['land_area'].get(iso)))
             json.dump(data, fd)
 
@@ -220,7 +223,7 @@ for key,row in c.dropna(subset=['Province/State']).iterrows():
 
         with open(os.path.join(config['build_dir'], iso, row['stp_key'] + '.json'), 'w') as fd:
             data = to_json(c.loc[key][date_columns], d.loc[key][date_columns], None if (r is None or key not in r.index) else r.loc[key][date_columns],
-                     iso=iso, name=row['Province/State'], display_name='{}, {}'.format(row['Province/State'], row['Country/Region']), lat=row['Lat'], lon=row['Long'])
+                     iso=iso, name=row['Province/State'], display_name='{}, {}'.format(row['Province/State'], row['Country/Region']), lat=safe_cast(row['Lat'], float), lon=safe_cast(row['Long'], float))
             json.dump(data, fd)
 
 # subnational US data is stored separately at the county level
