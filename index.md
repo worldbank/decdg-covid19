@@ -33,17 +33,17 @@ moreinfo_disabled:
  
 # get latest blogs from: https://blogs.worldbank.org/search?f%5B0%5D=channel%3A4&f%5B1%5D=language%3Aen&f%5B2%5D=series%3A881
 blogs:
-- date: November 10
-  link: https://blogs.worldbank.org/opendata/what-does-it-take-survey-south-asia-designing-phone-survey-18-languages-measure-covid-19
-  title: What does it take to survey South Asia? Designing a phone survey in 18 languages to measure COVID-19 impacts in the region
-- date: November 9
-  link: https://blogs.worldbank.org/opendata/impact-covid-19-global-poverty-under-worsening-growth-and-inequality
-  title: The impact of COVID-19 on global poverty under worsening growth and inequality
-- date: October 29
-  link: https://blogs.worldbank.org/opendata/how-digital-data-helped-indonesia-respond-covid-19
-  title: How digital data helped Indonesia respond to COVID-19
-- date: October 27
-  link: https://blogs.worldbank.org/opendata/oil-market-outlook-lasting-scars-pandemic
-  title: 'The oil market outlook: Lasting scars from the pandemic'
+- date: December 16
+  link: https://blogs.worldbank.org/opendata/capturing-impact-pandemic-burkina-faso-results-third-round-high-frequency-phone-survey
+  title: 'Capturing the impact of the pandemic in Burkina Faso: results from the third round of the high-frequency phone survey'
+- date: December 9
+  link: https://blogs.worldbank.org/opendata/pandemic-unfolds-google-part-2-covid-19-trends-brazil
+  title: 'The pandemic unfolds on Google (Part 2): COVID-19 trends in Brazil'
+- date: December 7
+  link: https://blogs.worldbank.org/opendata/pandemic-unfolds-google-part-1-new-global-dashboard-covid-19-monitoring
+  title: 'The pandemic unfolds on Google (Part 1): A new global dashboard for COVID-19 monitoring'
+- date: November 13
+  link: https://blogs.worldbank.org/opendata/uganda-high-frequency-phone-survey-covid-19-results-round-2
+  title: 'Uganda High-Frequency Phone Survey on COVID-19: Results from round 2'
 
 ---
