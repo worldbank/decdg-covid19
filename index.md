@@ -33,17 +33,16 @@ moreinfo_disabled:
  
 # get latest blogs from: https://blogs.worldbank.org/search?f%5B0%5D=channel%3A4&f%5B1%5D=language%3Aen&f%5B2%5D=series%3A881
 blogs:
-- date: December 16
-  link: https://blogs.worldbank.org/opendata/capturing-impact-pandemic-burkina-faso-results-third-round-high-frequency-phone-survey
-  title: 'Capturing the impact of the pandemic in Burkina Faso: results from the third round of the high-frequency phone survey'
-- date: December 9
-  link: https://blogs.worldbank.org/opendata/pandemic-unfolds-google-part-2-covid-19-trends-brazil
-  title: 'The pandemic unfolds on Google (Part 2): COVID-19 trends in Brazil'
-- date: December 7
-  link: https://blogs.worldbank.org/opendata/pandemic-unfolds-google-part-1-new-global-dashboard-covid-19-monitoring
-  title: 'The pandemic unfolds on Google (Part 1): A new global dashboard for COVID-19 monitoring'
-- date: November 13
-  link: https://blogs.worldbank.org/opendata/uganda-high-frequency-phone-survey-covid-19-results-round-2
-  title: 'Uganda High-Frequency Phone Survey on COVID-19: Results from round 2'
+- date: February 19
+  link: https://blogs.worldbank.org/opendata/catastrophic-expenditure-health-antiquity-today
+  title: 'Catastrophic expenditure for health: from antiquity to today'
+- date: February 18
+  link: https://blogs.worldbank.org/opendata/ensuring-continuity-survey-operations-while-mitigating-risk-covid-19-transmission-new
+  title: 'Ensuring continuity in survey operations while mitigating risk of COVID-19 transmission: New guidance available'
+- date: February 3
+  link: https://blogs.worldbank.org/opendata/data-driven-tools-can-support-decision-making-and-improve-implementation-especially-crises
+  title: "Data-driven tools can support decision-making and improve implementation \u2013 especially in crises like COVID-19"
+- date: February 2
+  link: https://blogs.worldbank.org/opendata/agriculture-buffer-covid-19-crisis-evidence-five-sub-saharan-african-countries
+  title: 'Agriculture as a buffer in COVID-19 crisis: Evidence from five Sub-Saharan African countries'
 
----
