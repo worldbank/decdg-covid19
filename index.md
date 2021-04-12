@@ -5,8 +5,11 @@ banner: ""      # see example in config.yml
 dash_url: https://datanalytics.worldbank.org/covid-dashboard/
 meta_description:  "Explore Coronavirus-related global data including: confirmed cases and deaths; hospitals beds per capita; physicians per capita; health expenditures; disease prevalence; life expectancy; access to basic handwashing; population by age and gender, and others."
 features:
-  class: col-xs-6
+  class: col-xs-4
   elements:
+    - title: COVID-19 High-Frequency Monitoring Dashboard
+      link:  https://www.worldbank.org/en/data/interactive/2020/11/11/covid-19-high-frequency-monitoring-dashboard
+      image: high-frequency-dashboard.png
     - title: Updated estimates of the impact of COVID-19 on global poverty
       link:  https://blogs.worldbank.org/opendata/updated-estimates-impact-covid-19-global-poverty
       image: poverty-analysis.png
@@ -33,16 +36,17 @@ moreinfo_disabled:
  
 # get latest blogs from: https://blogs.worldbank.org/search?f%5B0%5D=channel%3A4&f%5B1%5D=language%3Aen&f%5B2%5D=series%3A881
 blogs:
+- date: March 11
+  link: https://blogs.worldbank.org/opendata/relative-severity-covid-19-mortality-new-indicator-world-banks-data-platform
+  title: "Relative severity of COVID-19 mortality: A new indicator on the World Bank\u2019s data platform"
+- date: March 9
+  link: https://blogs.worldbank.org/opendata/lsms-supported-high-frequency-phone-surveys-covid-19-new-harmonized-datafiles-and
+  title: 'LSMS-supported high-frequency phone surveys on COVID-19: new harmonized datafiles and variables available'
 - date: February 19
   link: https://blogs.worldbank.org/opendata/catastrophic-expenditure-health-antiquity-today
   title: 'Catastrophic expenditure for health: from antiquity to today'
 - date: February 18
   link: https://blogs.worldbank.org/opendata/ensuring-continuity-survey-operations-while-mitigating-risk-covid-19-transmission-new
   title: 'Ensuring continuity in survey operations while mitigating risk of COVID-19 transmission: New guidance available'
-- date: February 3
-  link: https://blogs.worldbank.org/opendata/data-driven-tools-can-support-decision-making-and-improve-implementation-especially-crises
-  title: "Data-driven tools can support decision-making and improve implementation \u2013 especially in crises like COVID-19"
-- date: February 2
-  link: https://blogs.worldbank.org/opendata/agriculture-buffer-covid-19-crisis-evidence-five-sub-saharan-african-countries
-  title: 'Agriculture as a buffer in COVID-19 crisis: Evidence from five Sub-Saharan African countries'
 
+---

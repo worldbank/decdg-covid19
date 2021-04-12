@@ -163,12 +163,9 @@ div.section-features .lp__card_wrapper {
         min-height: 405px;
     }
 
-    div.section-features .lp__card_wrapper {
-        min-height: 290px;
-    }
-
-    div.section-features div.lp__card_content h5 {
-      font-size: 1.25rem;
+    div.section-features .col-xs-6 {
+      .lp__card_wrapper { min-height: 290px; }
+      div.lp__card_content h5 { font-size: 1.25rem; }
     }
 }
 	
