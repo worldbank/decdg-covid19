@@ -1,6 +1,5 @@
 
-*New:* latest [blog posts](#blogs); an [indicator of relative severity](#severe);
-and updated impacts on [statistical offices](#nso).
+*New:* latest [blog posts](#blogs) and [high-frequency impact monitoring](#features).
 {: .newfeatures :}
 
 Data is critical to support countries in managing the global coronavirus (COVID-19) pandemic.

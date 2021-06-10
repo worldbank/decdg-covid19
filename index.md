@@ -11,7 +11,7 @@ features:
       link:  https://www.worldbank.org/en/data/interactive/2020/11/11/covid-19-high-frequency-monitoring-dashboard
       image: high-frequency-dashboard.png
     - title: Updated estimates of the impact of COVID-19 on global poverty
-      link:  https://blogs.worldbank.org/opendata/updated-estimates-impact-covid-19-global-poverty
+      link:  https://blogs.worldbank.org/opendata/updated-estimates-impact-covid-19-global-poverty-effect-new-data
       image: poverty-analysis.png
       # id: povcal
     - title: Map of World Bank’s Operational Response to the Coronavirus
