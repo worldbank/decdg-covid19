@@ -3,13 +3,13 @@
 {: .newfeatures :}
 
 Data is critical to support countries in managing the global coronavirus (COVID-19) pandemic.
-This site provides an array of real-time data, statistical indicators, and other
-types of data that are relevant to the coronavirus pandemic. These data are 
-drawn from the World Bank's data catalog and other authoritative sources.
+This site was introduced in the early stages of the pandemic to provide
+an array of relevant real-time data, statistical indicators, and knowledge
+drawn from the World Bank and other authoritative sources.
 
-This page will be updated frequently as more data
-and research becomes available, particularly on the economic and social impacts of the
-pandemic and the [World Bank's efforts to address them][wb-covid].
+Please see the World Bank's [COVID-19 page][wb-covid] for the latest efforts
+to monitor and address the crisis and transition to recovery.
+
 
 <div id="dg-dashboard">
 {% if page.under_construction %}

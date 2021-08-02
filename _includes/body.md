@@ -1,6 +1,8 @@
 
 ## Datasets from the World Bank ## {#datasets}
 
+*This list was last updated in May, 2020*
+
 **[Coronavirus (COVID-19) Related Datasets][ddh]**.
 This collection in the World Bank data catalog contains datasets that may be useful for analysis or modelling.
 This will be expanded and improved over time.
@@ -66,6 +68,8 @@ response to the pandemic and the impacts on students. This page includes an inte
 {: .small-text :}
 
 ## Analyses ##
+
+*This list was last updated in September, 2021*
 
 **[COVID-19 Mortality in Rich and Poor Countries : A Tale of Two Pandemics][severity]**.
 Using a new indicator that expresses severity of coronavirus impacts relative to pre-pandemic
