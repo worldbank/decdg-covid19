@@ -36,17 +36,17 @@ moreinfo_disabled:
  
 # get latest blogs from: https://blogs.worldbank.org/search?f%5B0%5D=channel%3A4&f%5B1%5D=language%3Aen&f%5B2%5D=series%3A881
 blogs:
+- date: June 10
+  link: https://blogs.worldbank.org/opendata/year-covid-19-pandemic-what-rounds-4-and-5-uganda-high-frequency-phone-survey-tell
+  title: 'A year into the COVID-19 pandemic: what rounds 4 and 5 of Uganda High-Frequency Phone Survey tell'
+- date: April 26
+  link: https://blogs.worldbank.org/opendata/data-driven-global-health-research-time-covid
+  title: Data-driven global health research in the time of COVID
 - date: March 11
   link: https://blogs.worldbank.org/opendata/relative-severity-covid-19-mortality-new-indicator-world-banks-data-platform
   title: "Relative severity of COVID-19 mortality: A new indicator on the World Bank\u2019s data platform"
 - date: March 9
   link: https://blogs.worldbank.org/opendata/lsms-supported-high-frequency-phone-surveys-covid-19-new-harmonized-datafiles-and
   title: 'LSMS-supported high-frequency phone surveys on COVID-19: new harmonized datafiles and variables available'
-- date: February 19
-  link: https://blogs.worldbank.org/opendata/catastrophic-expenditure-health-antiquity-today
-  title: 'Catastrophic expenditure for health: from antiquity to today'
-- date: February 18
-  link: https://blogs.worldbank.org/opendata/ensuring-continuity-survey-operations-while-mitigating-risk-covid-19-transmission-new
-  title: 'Ensuring continuity in survey operations while mitigating risk of COVID-19 transmission: New guidance available'
 
 ---
